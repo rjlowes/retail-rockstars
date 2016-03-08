@@ -1,0 +1,6 @@
+<!-- add controller FeedbackCtrl -->
+<div class="feedback" ng-controller="FeedbackCtrl">
+    <ul ng-if="messageList">
+        <li ng-repeat="message in messageList">{{ message }}</li>
+    </ul>
+</div>

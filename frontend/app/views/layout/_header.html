@@ -1,0 +1,109 @@
+
+<!-- TODO slide out menu
+    http://tympanus.net/Development/OffCanvasMenuEffects/index.html -->
+
+<div class="navbar__btn">
+    <div id="hamburger" class="hamburglar" data-ng-click="activateMenu(menuActive)">
+        <div class="burger-icon">
+            <div class="burger-container">
+                <span class="burger-bun-top"></span>
+                <span class="burger-filling"></span>
+                <span class="burger-bun-bot"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar__basket">
+    <ng-include src="'views/basket/minibasket.html'"></ng-include>
+</div>
+
+<div class="navbar__logo">
+    <a class="logo" href="#/">
+        <img src="images/logo.png" class="img-responsive" />
+    </a>
+</div>
+    
+<nav class="navbar__menu" ng-class="menuClass">
+    
+    <div class="navbar__search" ng-include="'views/layout/_search.html'"></div>
+
+    <div class="nav-box">
+        <ul class="nav-list">
+            <li class="nav-list__item" data-ng-repeat="(catId, subcats) in categories">
+                <a href="#/category/{{ catId }}" class="nav-list__link">{{ catId }}</a>
+                <!--
+                <i class="icon-dotted-plus nav-list__item-btn" toggle-class="nav-list__subnav--open" toggle-class-target=""></i>
+                -->
+                <ul class="nav-list__subnav" data-ul-if="!!categories.length">
+                    <li class="nav-list__subnav-item" data-ng-repeat="cat in subcats">
+                        <a class="nav-list__subnav-link" href="#/category/{{ cat.name }}">{{ cat.name }}</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-list__item"><a href="" class="nav-list__link">Stores</a></li>
+            <li class="nav-list__item">
+                <a href="" class="nav-list__link">Account</a>
+                <ul class="nav-list__subnav">
+                    <li class="nav-list__subnav-item" ng-hide="customer === null">
+                        <a href="/#/secure/account" class="nav-list__subnav-link">account</a>
+                    </li>
+                    <li class="nav-list__subnav-item" ng-hide="customer === null">
+                        <a href="" ng-click="logout()" class="nav-list__subnav-link">logout</a>
+                    </li>
+                    <li class="nav-list__subnav-item" ng-hide="customer !== null">
+                        <a ui-sref="auth.login" class="nav-list__subnav-link">account</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--
+<div class="header__links" ng-controller="SessionStatusCtrl">
+    <ul class="list-linear list-linear--tight">
+        <li class="minibasket" data-ng-include="'views/basket/minibasket.html'" data-ng-controller="BasketCtrl"></li>
+        
+        <li class="reveal">
+            <span class="icon-ellipsis icon-size-md reveal__btn"></span>
+            <div class="reveal__bd">
+                <ul class="list-lined list-lined--solid">
+                    <li>
+                        <a href="">stores</a>
+                    </li>
+                    <li class="action-list__item" ng-hide="customer === null">
+                        <a href="/#/secure/account">account</a>
+                    </li>
+                    <li class="action-list__item" ng-hide="customer === null">
+                        <a href="" ng-click="logout()">logout</a>
+                    </li>
+                    <li class="action-list__item" ng-hide="customer !== null">
+                        <a ui-sref="auth.login">account</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+-->
+
+        <!--
+        <div data-ng-include="'views/basket/minibasket.html'" class="minibasket" data-ng-controller="BasketCtrl"></div>
+        -->
+
+
+
+<!-- TODO add AuthController nested -->
+
+<!--
+<nav class="toolbar col-xs-12">
+    <ul class="breadcrumb">
+        <li class="breadcrumb__item"><a href="">home</a></li>
+        <li class="breadcrumb__item"><a href="">store</a></li>
+        <li class="breadcrumb__item"><a href="">t-shirts</a></li>
+    </ul>
+</nav>
+-->
+
+

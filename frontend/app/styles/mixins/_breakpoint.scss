@@ -1,0 +1,59 @@
+// Mobile first breakpoints only require min-width
+// see http://www.sitepoint.com/managing-responsive-breakpoints-sass/
+
+$breakpoints: (
+    "sm"  : 544px,
+    "md" : 768px,
+    "lg"  : 992px,
+    "xl": 1200px
+);
+
+// mobile first,
+// mobile-landscape
+// small-tablet
+// tablet
+// small desktop
+// widescreen
+
+/*
+http://www.quora.com/What-are-typical-screen-width-breakpoints-that-should-be-considered-for-CSS-media-queries-when-designing-a-responsive-website
+
+320 pixels - For small screen devices, like phones, held in portrait mode.
+480 pixels - For small screen devices, like phones, held in landscape mode.
+600 pixels - Smaller tablets, like the Amazon Kindle (600×800) and Barnes & Noble Nook (600×1024), held in portrait mode.
+768 pixels - Ten-inch tablets like the iPad (768×1024) held in portrait mode.
+1024 pixels - Tablets like the iPad (1024×768) held in landscape mode, as well as certain laptop, netbook, and desktop displays.
+1200 pixels - For widescreen displays, primarily laptop and desktop browsers.
+*/
+
+@mixin breakpoint($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @if $value != null {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "No breakpoint found for #{$breakpoint}.";
+    }
+};
+
+@mixin breakpoint-range($breakpointMin, $breakpointMax) {
+    $min: map-get($breakpoints, $breakpointMin);
+    $max: map-get($breakpoints, $breakpointMax);
+
+    @if $min != null && $max != null {
+        // TODO adjust the max width by 1px
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+    @else if $min == null {
+        @warn "No min breakpoint found for #{breakpointMin}";
+    }
+    @else if $max == null {
+        @warn "No max breakpoint found for #{breakpointMax}";
+    }
+
+}

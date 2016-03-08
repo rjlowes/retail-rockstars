@@ -1,0 +1,128 @@
+// Skeleton
+.navbar {
+    @include clearfix;
+    background: #fff;
+    border-bottom: 1px solid $border-color;
+    height: 50px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.navbar__btn {
+    float: left;
+    width: 40px;
+
+    @include media-breakpoint-up(lg) {
+        display:none;
+    }
+}
+
+.navbar__logo {
+    overflow: hidden;
+
+    & .logo { // move this!
+        display: block;
+        margin: 0 auto;
+        max-width: 162px;
+        padding: 0 20px;
+        width: 100%;
+
+        & img {
+            margin: 4px 0;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        overflow: auto;
+        float: left;
+    }
+}
+
+.navbar__menu {
+    @include media-breakpoint-down(md) {
+        background: #fff;
+        display: flex;          // use flexbox to change the order (IE can have original order)
+        flex-direction: column;
+        margin-top: 50px;
+        height: 100%;
+        left: 0;
+        padding: 2.5em 1.5em 0;
+        position: absolute;
+        top: 0;
+        width: 280px;
+        z-index: 1001;
+        transform: translate3d(-280px,0,0);
+        transition: transform 0.4s;
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    }
+
+    .show-nav & {
+        @include media-breakpoint-down(md) {
+            transform: translate3d(0,0,0);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+// A temporary override
+.navbar__menu a {
+    color: $body-colour;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.navbar__basket {
+    float: right;
+    width: 40px;
+}
+
+
+
+
+
+
+// These handle the toggling for mobile view
+
+.reveal {
+    position: relative;
+}
+
+.reveal__btn {
+    cursor: pointer;
+}
+
+.reveal__bd {
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.7);
+    border: 1px solid #ebebeb;
+    display: none;
+    right: 2px;
+    padding: 5px;
+    position: absolute;
+    top: 100%;
+}
+
+
+.reveal:hover .reveal__bd {
+    display: block;
+}
+
+
+.nav-btn {
+    color: #000;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: -40px;
+    top: 10px;
+
+    & [class^="icon-"] {
+        background: #fff;
+    }
+
+    @include media-breakpoint-up(md) {
+        & {
+            display: none;
+        }
+    }
+}

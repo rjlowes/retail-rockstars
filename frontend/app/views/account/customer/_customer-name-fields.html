@@ -1,0 +1,20 @@
+<div class="form-row">
+    <label for="title" class="form-control-label">Title</label>
+    <div class="form-control-col">
+        <select name="title" id="title" data-ng-model="registration.title" class="form-control">
+            <option ng-repeat="salutation in salutations" value="{{ salutation }}">{{ salutation }}</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <label for="firstname" class="form-control-label">First name</label>
+    <div class="form-control-col">
+        <input type="text" name="firstname" id="firstname" data-ng-model="registration.firstname" class="form-control" placeholder="First name" />
+    </div>
+</div>
+<div class="form-row">
+    <label for="lastname" class="form-control-label">Last name</label>
+    <div class="form-control-col">
+        <input type="text" name="lastname" id="lastname" data-ng-model="registration.lastname" class="form-control" placeholder="Last name" />
+    </div>
+</div>

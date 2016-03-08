@@ -1,0 +1,23 @@
+<section class="container">
+	<div class="row">
+		
+		<header class="col-xs-4">
+			<h1 class="rm-margin-bottom">Edit this address</h1>
+			<p>Hi, Rich. This is your addressbook. From here you can manage every aspect of your delivery and billing information. You currently have (1) address.</p>
+			<ul class="">
+		        <li><a ui-sref="account.addressbooknew" class="">Back to dashboard</a></li>
+		    </ul>
+		</header>
+
+	    <div class="col-xs-8">
+		    <form ng-init="findAddress()" ng-submit="editAddress()" novalidate>
+		        <fieldset>
+		            <!--<legend>Edit address</legend>-->
+		           <!--  <div ng-include src="'views/account/address-fields.html'" include-replace></div> -->
+		            <ng-include src="'views/partials/fieldsets/address.html'" include-replace></ng-include>
+		        </fieldset>
+		        <button type="submit" class="btn btn--inverse">Save</button>
+		    </form>
+		</div>
+	</div>
+</section>

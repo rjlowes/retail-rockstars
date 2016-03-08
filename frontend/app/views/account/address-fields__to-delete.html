@@ -1,0 +1,33 @@
+<!-- Need title, firstname, lastname -->
+
+
+<div class="form-row">
+    <label for="label">Label</label>
+    <input name="label" id="label" class="form-control" ng-model="addressForm.label" />
+</div>
+<div class="form-row">
+    <label for="address1">Address line 1</label>
+    <input name="address1" id="address1" class="form-control" ng-model="addressForm.address1" />
+</div>
+<div class="form-row">
+    <label for="address2">Address line 2</label>
+    <input name="address2" id="address2" class="form-control" ng-model="addressForm.address2" />
+</div>
+<div class="form-row">
+    <label for="address3">Address line 3</label>
+    <input name="address3" id="address3" class="form-control" ng-model="addressForm.address3" />
+</div>
+<div class="form-row">
+    <label for="townCity">Town/City</label>
+    <input name="townCity" id="townCity" class="form-control" ng-model="addressForm.townCity" />
+</div>
+<div class="form-row">
+    <label for="postcode">Postcode</label>
+    <input name="postcode" id="postcode" class="form-control" ng-model="addressForm.postcode" />
+</div>
+<div class="form-row">
+    <label for="country">Country</label>
+    <select name="country" ng-model="addressForm.country" class="form-control" disable>
+        <option value="UK">United Kingdom</option>
+    </select>
+</div>

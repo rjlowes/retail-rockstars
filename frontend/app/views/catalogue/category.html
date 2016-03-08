@@ -1,0 +1,62 @@
+
+<!--
+<h1>Product list for {{category.name}}</h1>
+
+<p>TODO get category info and CMS for banner!</p>
+-->
+
+
+<section class="container">
+
+    <h1>Viewing category {{category.name}}</h1>
+
+    <ng-include src="'views/catalogue/_pagination.html'"></ng-include>
+
+    <!-- TODO add aria -->
+    <ul class="filter-list">
+        <li class="filter-list__item">
+            <span class="filter-list__item-hd">Colour</span>
+            <ul class="filter-list__item-content">
+                <li>Item</li>
+            </ul>
+        </li> 
+        <li class="filter-list__item">
+            <span class="filter-list__item-hd">Style</span>
+            <ul class="filter-list__item-content">
+                <li>Item</li>
+            </ul>
+        </li> 
+        <li class="filter-list__item">
+            <span class="filter-list__item-hd">Price</span>
+            <ul class="filter-list__item-content">
+                <li>Item</li>
+            </ul>
+        </li>  
+    </ul>
+    
+    <ul class="row" data-ul-if="!!products.length">
+        <li data-ng-repeat="product in pagingData.content" class="col-xs-22 col-xs-push-1 col-sm-12 col-sm-push-0 col-md-8 col-lg-6">
+            <!--
+                http://peteschuster.com/2012/05/semantic-html5-for-products-in-ecommerce/
+            -->
+            <article class="thumb" itemscope itemtype="http://schema.org/Product">
+                <a href="#/product/{{ product.id }}" title="" itemprop="url" class="thumb__img">
+                    <img src="http://image1.superdry.com/static/images/products/upload463659292474402024.jpg" class="img-responsive" />
+                </a>
+                <div class="thumb__content">
+                    <h2 class="type-margin-clear">({{ product.id }}) {{ product.title }}</h2>
+                    <p class="offer" itemscope itemtype="http://schema.org/Offer">
+                        <span class="price" itemprop="price">&pound;100.00</span>
+                    </p>
+                </div>
+            </article>
+        </li>
+    </ul>
+
+    <!--
+    <div class="loading-screen">
+        <div class="loading-screen__loader"></div>
+    </div>
+    -->
+
+</section>

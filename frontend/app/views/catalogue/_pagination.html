@@ -1,0 +1,42 @@
+
+<!--{{ paging }}-{{ pagingData.totalPages }}-->
+
+
+<!--
+    TODO The server provides 0 based indexing but we want to provide 1 based indexing to the user
+-->
+
+<!--
+<ul class="pagination">
+    <li class="pagination__item">
+        <a href="" class="pagination__item-link" data-ng-hide="pagingData.first" data-ng-click="selectPage(1)" aria-label="Select last page">First</a>
+        <span class="pagination__item-text" data-ng-hide="!pagingData.first">First</span>
+    </li>
+
+    <li class="pagination__item" data-ng-repeat="i in range(pagingData.totalPages) track by $index">
+        <a href="" class="pagination__item-link" data-ng-hide="pagingData.number === $index" data-ng-click="selectPage($index)" aria-label="Select last page">{{ $index }}</a>
+        <span class="pagination__item-text" data-ng-hide="pagingData.number !== $index">{{ $index }}</span>
+    </li>
+
+    <li class="pagination__item">
+        <a href="" class="pagination__item-link" data-ng-hide="pagingData.last" data-ng-click="selectPage(pagingData.totalPages)" aria-label="Select last page">Last</a>
+        <span class="pagination__item-text" data-ng-hide="!pagingData.last">Last</span>
+    </li>
+
+    <li class="pagination__item">
+        <a href="" class="pagination__item-link" data-ng-hide="paging.prev > 0" data-ng-click="selectPage(paging.prev)" aria-label="Select Prev page">Prev {{calculatedPages.prev }}</a>
+        <span class="pagination__item-text" data-ng-hide="paging.prev < 1">Prev {{paging.prev }}</span>
+    </li>
+
+    <li class="pagination__item">
+        <a href="" class="pagination__item-link" data-ng-hide="paging.next >= paging.last" data-ng-click="selectPage(paging.next)" aria-label="Select next page">Next {{calculatedPages.next}}</a>
+        <span class="pagination__item-text" data-ng-hide="paging.next < paging.last">Next {{paging.next}}</span>
+    </li>
+</ul>
+-->
+
+<ol class="page-bullets">
+    <li class="page-bullets__item" data-ng-repeat="i in range(pagingData.totalPages) track by $index">
+        <a href="" class="page-bullets__link" data-ng-class="{'page-bullets__link--selected' : pagingData.number === $index}" data-ng-click="selectPage($index + 1)" aria-label="Select page {{ $index + 1 }}">Select page {{ $index + 1 }}</a>
+    </li>
+</ol>

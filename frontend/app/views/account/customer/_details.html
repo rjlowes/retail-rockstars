@@ -1,0 +1,44 @@
+tesing
+<div class="container pull-down">
+
+    <h1>Your details</h1>
+
+    <div class="pod">
+
+        <section class="mod-reveal">
+            <header class="mod-reveal__hd row">
+                <h2>Your Name</h2>
+                <div class="mod-reveal__hd-title">Title:</div>
+                <div class="mod-reveal__hd-content">{{ customer.title }} {{ customer.firstname }} {{ customer.lastname}} </div>
+                <div class="mod-reveal__hd-action"><a href="" ng-model="customerNameCollapse" ng-click="customerNameCollapse = !customerNameCollapse">edit ></a></div>
+            </header>
+            <div class="mod-reveal__bd" ng-show="customerNameCollapse">
+                <form ng-submit="updateCustomer()" class="mod-reveal__bd-content" novalidate>
+                    <fieldset>
+                        <div class="form-row">
+                            <label for="title">Title</label>
+                            <select name="title" id="title" class="form-control" ng-model="customer.title">
+                                <option ng-repeat="salutation in salutations">{{ salutation }}</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="firstname">Firstname</label>
+                            <input name="firstname" id="firstname" class="form-control" ng-model="customer.firstname" />
+                        </div>
+                        <div class="form-row">
+                            <label for="lastname">Lastname</label>
+                            <input name="lastname" id="lastname" class="form-control" ng-model="customer.lastname" />
+                        </div>
+                        <div class="form-row">
+                            <label for="telephone">Telephone</label>
+                            <input name="telephone" id="telephone" class="form-control" ng-model="customer.telephone" />
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn--sm pull-right">Save</button>
+                </form>
+            </div>
+            
+        </section>
+
+    </div>
+</div>

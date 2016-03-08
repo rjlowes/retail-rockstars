@@ -1,0 +1,35 @@
+
+<!--
+<div class="form-group">
+    <div class="col-xs-6">
+        <select aria-label="Title" aria-required="true" name="title" id="title" ng-init="registration.title = registration.title || SALUTATIONS[0]" ng-model="formData.title" class="form-control" required>
+            <option ng-repeat="salutation in salutations" value="{{ salutation }}">{{ salutation }}</option>
+        </select>
+    </div>
+    <div class="col-xs-9">
+        <input aria-required="true" aria-label="First name" type="text" name="firstname" id="firstname" ng-model="formData.firstname" class="form-control" placeholder="First name" ng-minlength="2" ng-maxlength="30" required />
+    </div>
+    <div class="col-xs-9">
+        <input aria-required="true" aria-label="Lastname" type="text" name="lastname" id="lastname" ng-model="formData.lastname" class="form-control" placeholder="Last name" ng-minlength="2" ng-maxlength="30" required />
+    </div>
+    <div class="form-help" ng-messages="form.title.$error" role="alert" ng-if="form.title.$touched">
+        <label for="title" class="error" ng-message="required">Title required</label>
+    </div>
+    <div class="form-help" ng-messages="form.firstname.$error" ng-if="form.firstname.$touched">
+        <label for="firstname" class="error" ng-message="minlength, maxlength, required">Firstname 2 to 30 characters</label>
+    </div>
+    <div class="form-help" ng-messages="form.lastname.$error" ng-if="form.lastname.$touched">
+        <label for="lastname" class="error" ng-message="minlength, maxlength, required">Lastname 2 to 30 characters</label>
+    </div>
+</div>
+-->
+
+<div class="form-group">
+    <div class="col-xs-24">
+        <input aria-required="true" aria-label="Full name" type="text" name="fullname" id="fullname" ng-model="formData.fullname" class="form-control" placeholder="Full name" ng-minlength="2" ng-maxlength="150" required />
+    </div>
+    <div class="form-help" ng-messages="form.fullname.$error" role="alert" ng-if="form.fullname.$touched">
+        <label for="fullname" class="error" ng-message="required">Full name required</label>
+    </div>
+</div>
+

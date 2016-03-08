@@ -1,0 +1,24 @@
+
+<div class="container pull-down">
+
+    <h1 class="">Your Account</h1>
+
+    <div class="row">
+
+        <nav class="col-md-3">
+            <ul class="heading-listx">
+                <li class="heading-listx__item"><a ui-sref="account.dashboard">account dashboard</a></li>
+                <li class="heading-listx__item"><a ui-sref="account.details">account information</a></li>
+                <li class="heading-listx__item"><a ui-sref="account.orders">my orders</a></li>
+                <li class="heading-listx__item"><a ui-sref="account.addressbook">address book</a></li>
+                <li class="heading-listx__item"><a ui-sref="accountDetails">my subscriptions</a></li>
+                <li class="heading-listx__item"><a ui-sref="accountDetails">my wishlist</a></li>
+            </ul>
+        </nav>
+
+        <section class="col-md-9">
+            <ui-view></ui-view>
+        </section>
+        
+    </div>
+</div>

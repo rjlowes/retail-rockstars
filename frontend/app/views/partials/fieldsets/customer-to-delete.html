@@ -1,0 +1,17 @@
+
+<div class="form-row">
+    <label for="title">Title</label>
+    <select ng-model="formData.customer.title" name="" class="form-control">
+        <option value="{{ salutation }}" ng-repeat="salutation in SALUTATIONS">{{ salutation }}</option>
+    </select>
+</div>
+
+<div class="form-row">
+    <label for="firstname">Firstname</label>
+    <input name="firstname" id="firstname" class="form-control" ng-model="formData.customer.firstname" />
+</div>
+
+<div class="form-row">
+    <label for="lastname">Lastname</label>
+    <input name="lastname" id="lastname" class="form-control" ng-model="formData.customer.lastname" />
+</div>

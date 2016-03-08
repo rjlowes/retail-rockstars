@@ -1,0 +1,8 @@
+
+.footer {
+    border-top: 1px solid $border-color;
+    margin-top: 10px;
+    min-height: 150px;
+
+    @include gradient(#0f0f0f, #010101);
+}

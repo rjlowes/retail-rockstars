@@ -1,0 +1,28 @@
+// 
+
+.toolbar {
+    min-height: 34px;
+    @include gradient(#202020, #0b0b0b);
+}
+
+.breadcrumb {
+
+}
+
+.breadcrumb__item {
+    display: inline-block;
+
+    // http://brajeshwar.github.io/entities/
+    &:after {
+        content: '\25b6;';
+        //content: '\00bb';
+    }
+
+    &:last-child {
+        // TODO change from anchor
+        a {
+            color: $text-colour-brand;
+        }
+    }
+}
+// &#9654;

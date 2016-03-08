@@ -1,0 +1,58 @@
+
+// dashboard
+.card {
+	
+	&--border {
+		
+	}
+
+	//border-bottom: 30px solid #edeef3;
+}
+
+.card__footer {
+	position: relative;
+}
+
+.card__actions {
+	padding: 0 20px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+
+	&--bottom {
+
+	}
+}
+
+.card-callout {
+	overflow: hidden;
+}
+
+.card-callout__img {
+	float: left;
+	width: 50%;
+
+	&--right {
+		float: right;
+	}
+}
+
+.card-callout__text {
+
+}
+
+// see .address
+.card-info {
+	//border:1px dotted yellow;
+	//background: #3a5d96;
+}
+
+.card-info__text {
+	text-align: center;
+}
+
+.card-info__actions {
+	border-top: 1px dotted #edeef3;
+	text-align: center;
+}

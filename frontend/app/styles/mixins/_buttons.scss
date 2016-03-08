@@ -1,0 +1,10 @@
+
+// Vertical rhythm established from line-height calculated from baseline
+// so no verical padding
+@mixin btn-size($padding-horizontal, $font-size, $line-height, $border-radius) {
+    padding: 0 $padding-horizontal;
+    @include rem($font-size);
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+

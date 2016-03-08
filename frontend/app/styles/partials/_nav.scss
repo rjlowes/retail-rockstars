@@ -1,0 +1,115 @@
+
+
+
+// Or alternatively try non-mobile first for the transforms and transitions
+@mixin transform-clear {
+    transform: none;
+    transition: none;
+    transition-timing-function: none;
+}
+
+%nav-list__trans-start {
+    transition: transform 0s 0.4s;
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+%nav-list__trans-end {
+    transform: translate3d(0,0,0);
+    transition: transform 0.8s;
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.nav-box__title {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+.nav-list {
+
+}
+
+.nav-list__item {
+
+    @include media-breakpoint-down(md) {
+        border-bottom: 1px solid $border-color;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: inline-block;
+        position: relative;
+
+        &:hover .nav-list__subnav {
+            display: block;
+        }
+    }
+}
+
+.nav-list__link {
+    @extend %nav-list__trans-start;
+    display: block;
+    text-decoration: none;
+
+    .show-nav & {
+        @extend %nav-list__trans-end;
+
+        @include breakpoint('lg') {
+            @include transform-clear;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 8px 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include transform-clear;
+        padding: 8px;
+    }
+}
+
+.nav-list__item-btn {
+    @include breakpoint('lg') {
+        display:none;
+    }
+}
+
+.nav-list__subnav {
+    //max-height: 0;        // used to get the full height 
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+
+    &--open {
+        max-height: 100px;
+        transition: max-height 0.15s ease-in;
+
+        @include breakpoint('lg') {
+            transition: none;
+            max-height: none;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        background: #F5F7F9;
+    }
+
+    @include breakpoint('lg') {
+        background: #fff;
+        display: none;
+        max-height: none;
+        position: absolute;
+        border: 1px solid #000;
+        padding: 10px 20px;
+        top: 100%;
+        z-index: 100;
+    }
+}
+
+.nav-list__subnav-item {
+    border-bottom: 1px solid #fff;
+    padding-left: 5px;
+}
+
+.nav-list__subnav-link {
+    text-decoration: none;
+}

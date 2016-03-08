@@ -1,0 +1,148 @@
+fieldset {
+
+}
+
+legend {
+    color: #46a5df;
+    //@include rem($type-sm-font-size);
+    @extend .type-sml;
+}
+.legend-center {
+    margin: 0 auto 1em auto;
+}
+
+.form-group {
+    @include clearfix;
+    margin-bottom: 11px;
+}
+
+label,
+.label {
+    font-size: 12px;
+    color: #46a5df;
+    //font-weight: bold;
+    //line-height: 2.5;
+}
+
+// Form field wrapper
+// What's this?
+.form-row {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+// All input types
+.form-control {    
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    color: #535353;
+    color: black;
+    display: block;
+    @include rem($type-sm-font-size);
+    line-height: 2.4em;
+    padding: 0 .8rem;
+    width: 100%;
+
+    &--med {
+        width: 50%;
+    }
+
+    &:active,
+    &:focus {
+        border-color: #009df5 !important;
+        box-shadow: 0 0 2px rgba(0, 157, 245, 0.9);
+        outline: none;
+    }
+}
+select {
+    background: #fff;
+    height: 33px;
+}
+
+// Add to mixin
+input::-webkit-input-placeholder {
+    color: #535353 !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+    color: #535353 !important;  
+} 
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: #535353 !important;  
+}
+input:-ms-input-placeholder {  
+    color: #535353 !important;  
+}
+
+
+/*select {
+    background-color: transparent;
+    border: 0;
+    color: #333;
+    line-height: 2.3em;
+}*/
+
+.form-radio,
+.form-checkbox {
+    position: relative;
+}
+
+.form-radio label,
+.form-checkbox label {
+    line-height: 1;
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.form-radio input[type=radio],
+.form-checkbox input[type=checkbox] {
+    margin-left: -20px;
+    margin-top: 6px;
+    position: absolute;
+}
+
+// The grid
+//.form-group label {
+//    @extend .col-sm-2;
+//}
+
+//.form-group__control {
+//    @extend .col-sm-6;
+//}
+
+
+// Validation - to be renamed
+input.ng-invalid.ng-touched {
+    border-color: #A7050C;
+}
+
+/*
+input.ng-valid.ng-touched {
+    border-color: #77BD42;
+}*/
+
+label.error {
+    color: #A7050C;
+    @include rem($type-sm-font-size);
+    font-weight: 600;
+    line-height: $type-sm-line-height;
+    margin-bottom: #{$type-sm-font-size}em;
+    clear: both;
+    display: block;
+    padding: 0 5px;
+    margin:0;
+}
+
+/*.form-help {
+    transition:3s linear all;
+}
+
+.form-help.ng-active {
+    opacity: 1;
+}
+
+.form-help.ng-inactive {
+    opacity: 0;
+}*/

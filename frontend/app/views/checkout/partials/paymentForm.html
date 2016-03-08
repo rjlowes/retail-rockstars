@@ -1,0 +1,68 @@
+<style>
+    .the-button {
+        padding: 10px 200px;
+        box-shadow: 0 0 2px rgba(0,0,0,0.1);
+        margin-bottom: 10px;
+        max-height: 70px;
+    }
+</style>
+
+
+<form name="paymentForm" ng-submit="makePayment()" novalidate>
+    <div class="row">
+        <fieldset>
+            <legend>Card details</legend>
+
+            <div class="form-group">
+                <div class="col-xs-24">
+                    <input aria-label="Name on card" name="cardName" id="cardName" class="form-control" ng-model="formData.cardName" placeholder="Name on card" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-18">
+                    <input aria-label="Card Number" name="cardNumber" id="cardNumber" class="form-control" ng-model="formData.cardNumber" placeholder="Card no." />
+                </div>
+                <div class="col-xs-6">
+                    <input aria-label="CSV" name="csv" id="csv" class="form-control" ng-model="formData.csv" placeholder="CSV" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <select id="month" ng-model="formData.month" class="form-control">
+                        <option ng-repeat="month in ['January', 'February', 'March', 'April', 'May']" value="{{ month }}">{{ month }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-12">
+                    <select id="year" ng-model="formData.year" class="form-control">
+                        <option ng-repeat="year in [2016, 2017, 2018, 2019, 2020]" value="{{ year }}">{{ year }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-9">
+                <input aria-label="Do you agree to the terms and conditions?" type="checkbox" name="terms" id="terms" ng-model="formData.terms" class="form-control" />
+                <label for="sameAsBilling">Agree to Terms &amp; Conditions</label>
+            </div> 
+
+        </fieldset>
+        <div class="col-xs-24">
+            <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to billing</button>
+        </div>
+    </div>
+</form>
+
+<p></p>
+<p></p>
+<p>OR</p>
+<p></p>
+<p></p>
+
+<div class="the-button">
+    <img src="images/paypal.png" class="img-responsive" />
+</div>
+
+<div class="the-button">
+    <img src="images/apple-pay-logo.png" class="img-responsive" />
+</div>

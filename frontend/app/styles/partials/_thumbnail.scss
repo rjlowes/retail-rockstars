@@ -1,0 +1,19 @@
+.thumb {
+    // TODO mobile first 
+
+    border: 1px solid $border-color;
+    position: relative;
+
+    // Spacer needs to move
+    margin-bottom: 10px;
+}
+
+.thumb__img {
+    & img {
+        display: block;
+    }
+}
+
+.thumb__content {
+    text-align: center;
+}

@@ -1,0 +1,53 @@
+
+<a ui-sref="basket" class="minibasket__summary">
+    <i class="icon-shopping-bag icon-size-md"></i><span class="action-list__text show-tablet">&nbsp;({{basketItemCount}})</span>
+</a>
+<div class="minibasket__reveal type-inverse">
+    
+    <!--  data-ng-if="basketItems.length > 0" -->
+
+    <ul class="minibasket__list" ng-if="basketItems.length > 0">
+        <li class="minibasket__list-item" data-ng-repeat="basketItem in basketItems">
+            <article class="media">
+                <span class="btn-link btn-link--sr-only-- btn-link--cross" role="button" ng-click="deleteItem(basketItem.variant.sku)">
+                    <span class="type-sr-only">delete</span>
+                </span>
+                <a href="" class="media__img">
+                    <img src="/images/placeholders/tee.jpg" width="70" />
+                </a>
+                <div class="media__bd">
+                    <h2>Crew Neck Grap T Shirt</h2>
+                    <ul>
+                        <li>{{ basketItem.variant.sku }} - {{ basketItem.quantity }}</li>
+                        <li>XLarge</li>
+                        <li>&pound;39.99</li>
+                    </ul>
+                </div>
+            </article>
+        </li>
+    </ul>
+    
+    <p data-ng-if="basketItems.length == 0">Empty basket</p>
+    
+    <ol class="page-bullets" data-ng-if="pages.length > 0">
+        <li class="page-bullets__item" data-ng-repeat="page in pages">
+            <a href="" class="page-bullets__link" data-ng-click="selectPage(page)" data-ng-class="{'page-bullets__link--selected': page === selectedPage}">Select page {{ page }}</a>
+        </li>
+    </ol>
+
+    <!--<span class="minibasket__btn minibasket__btn--down" role="button"></span>-->
+
+    <div class="minibasket__footer" ng-if="basketItems.length > 0">
+        <dl class="dl-asymetric">
+            <dt>Sub total (exc delivery)</dt>
+            <dd>&pound;79.98</dd>
+        </dl>
+        <a ui-sref="basket" class="btn btn--block">Checkout Now</a>
+    </div>
+
+    <!--
+    <div class="loading-screen">
+        <div class="loading-screen__loader"></div>
+    </div>
+    -->
+</div>

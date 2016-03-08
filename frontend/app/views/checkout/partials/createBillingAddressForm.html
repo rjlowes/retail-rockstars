@@ -1,0 +1,12 @@
+<form name="addressForm" ng-submit="createAddress()" novalidate>
+    <div class="row">
+        <fieldset>
+            <legend>Or create a new address</legend>
+            <fieldset-customer form="addressForm" form-data="addressFormData"></fieldset-customer>
+            <fieldset-address form="addressForm" form-data="addressFormData"></fieldset-address>
+        </fieldset>
+        <div class="col-xs-24">
+            <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to payment</button>
+        </div>
+    </div>
+</form>

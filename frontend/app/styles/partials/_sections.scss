@@ -1,0 +1,13 @@
+//
+// Useful classes for breaking up sectioning elements
+// 
+// ----------------------------------------------------
+
+// Basic section with baseline margins
+.section {
+    padding: 24px 0;
+
+    &--lg {
+        padding: 48px 0;
+    }
+}

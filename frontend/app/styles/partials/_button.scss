@@ -1,0 +1,68 @@
+
+// Basic button
+.btn {
+    background-color: #77BD42;  // green
+    background-color: #009df5;  // blue
+    background-image: none;
+    border: none;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-family: $heading-font-family;
+    text-align: center;
+
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    //@include btn-size(50px, $paragraph-font-size, ($paragraph-line-height * 2), 2px);
+    @include btn-size(50px, $type-sm-font-size, 2.4em, 2px);
+
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    &[disabled=disabled] {
+        background-color: #000;
+        opacity: .3;
+    }
+}
+
+// http://codepen.io/seansean11/pen/wHIae
+
+.btn--sml {
+    @include btn-size(12px, $type-sm-font-size, $type-sm-line-height, 2px);
+}
+
+.btn--md {
+    @include btn-size(12px, $heading2-font-size, $heading2-line-height, 2px);
+}
+
+
+// Is this used??
+
+
+.btn-link {
+    color: #000;
+
+    & * {   // All sub-elements should allow sr-only
+        display: block;
+    }
+
+    &--sr-only {
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &--cross::after {
+        color: #000;
+        content: '\2716';
+    }
+}
+
+// Colours
+.btn-primary {
+    background: #ff8647;
+    box-shadow: inset 0 1px rgba(255,255,142,.2),0 0 3px rgba(0,0,0,.25);
+}

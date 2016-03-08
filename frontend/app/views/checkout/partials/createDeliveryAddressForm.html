@@ -1,0 +1,17 @@
+<form name="addressForm" ng-submit="createDeliveryAddress()" novalidate>
+    <div class="row">
+        <fieldset>
+            <legend>Or create a new address</legend>
+            <fieldset-customer form="addressForm" form-data="addressFormData"></fieldset-customer>
+            <fieldset-address form="addressForm" form-data="addressFormData"></fieldset-address>
+            <!-- DRY this up
+            <div class="col-xs-9">
+                <input aria-label="Use this address as billing address too?" type="checkbox" name="sameAsBilling" id="sameAsBilling" ng-model="formData.firstname" class="form-control" />
+                <label for="sameAsBilling">Same as billing address</label>
+            </div> -->
+        </fieldset>
+        <div class="col-xs-24">
+            <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to billing</button>
+        </div>
+    </div>
+</form>

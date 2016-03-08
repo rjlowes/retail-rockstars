@@ -1,0 +1,38 @@
+.nav-local {
+
+}
+
+.nav-local__label {
+
+}
+
+.nav-local__list {
+
+}
+
+.nav-local__item {
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 4.5;
+    @include breakpoint('tablet-lg') {
+        border: none;
+        display: inline-block;
+        line-height: 1.5;
+    }
+}
+
+.nav-local__link {
+    color: #484848;
+    font-weight: 600;
+    padding: 12px 15px 11px;
+    line-height: 24px;
+    font-size: 15px;
+    @include breakpoint('tablet-lg') {
+        padding: 14px 24px 15px 0;
+    }
+}
+
+//.mobile-top-nav.active>a {
+.mobile-top-nav > a {
+    padding-bottom: 12px;
+    color: #2c9ab7;
+}

@@ -1,0 +1,20 @@
+
+<form role="form" class="mod-bordered" ng-submit="submitShoppingBagForm(addToBagForm.$valid)" name="addToBagForm" novalidate>
+    <div>
+        <div class="form-group">
+            <label for="sku" class="col-sm-2">Size</label>
+            <div class="col-sm-6">
+                <select id="sku" name="sku" class="form-control" ng-model="form.sku" ng-required>
+                    <option ng-repeat="variant in product.variants" value="{{ variant.sku }}">{{ variant.size }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity" class="col-sm-2">Quantity</label>
+            <div class="col-sm-6">
+                <input type="number" value="1" min="1" max="10" name="quantity" id="quantity" class="form-control" ng-model="form.qty" ng-required="true" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn--md btn--block">Buy</button>
+    </div>
+</form>

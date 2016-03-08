@@ -1,0 +1,70 @@
+//
+// List elements
+// --------------------------------------------------
+
+// Horizontal list with optional bullet seperators
+.list-linear {
+    // overflow: hidden;   // or add clearfix
+    @include clearfix;
+
+    > li {
+        display: inline-block;
+        position: relative;
+    }
+
+    > li:not(:first-child) {
+        padding-left: 18px;
+    }
+
+    &--tight {
+        padding: 0;
+    }
+    
+    &--bullet > li:not(:first-child):before {
+        content: "•";
+        position: absolute;
+        top: 0;
+        left: 6px;
+        font-size: 12px;
+        color: #959595;
+    }
+}
+
+// Simple vertical list with list items seperated by keylines
+.list-lined {
+    > li {
+        line-height: 1;
+        padding: 10px 0;
+    }
+    &--solid > li {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    &--dotted > li {
+        border-bottom: 1px dotted #e0e0e0;
+    }
+    &--dashed > li {
+        border-bottom: 1px dashed #e0e0e0;
+    }
+}
+
+// TODO REmove!!!
+// Action list is just the same as linear list and used only in the header!!! Remember, minibasket must continue working.
+.action-list {
+    &--right {
+        text-align: right;
+    }
+}
+
+.action-list__item {
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 4px;
+    padding: 0 4px;
+    @include breakpoint('tablet') {
+        font-size: inherit;
+    }
+}
+
+.action-list__icon {
+    font-size: 40px;
+}

@@ -1,0 +1,21 @@
+<!-- 
+    TODO add validation
+-->
+<form name="chooseAddressForm" ng-submit="selectDeliveryAddress()" novalidate>
+    <fieldset>
+        <legend>Choose from your addressbook</legend>
+        <div class="form-group">
+            <select id="customerAddresses" class="form-control" ng-model="selectAddressData.addressId">
+                <option ng-repeat="address in addresses" value="{{ address.id }}">{{ address.fullname }}, {{ address.address1 }}</option>
+            </select>
+        </div>
+        <!-- DRY this up
+        <div class="col-xs-9">
+            <input aria-label="Use this address as billing address too?" type="checkbox" name="useAsBilling" id="useAsBilling" ng-model="selectAddressData.useAsBilling" class="form-control" />
+            <label for="useAsBilling">Use as billing address</label>
+        </div>-->
+        <div class="form-group">
+            <button type="submit" class="btn btn--block">Choose &amp; go to billing</button>
+        </div>
+    </fieldset>
+</form>

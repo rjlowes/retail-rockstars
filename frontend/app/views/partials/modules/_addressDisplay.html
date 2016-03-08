@@ -1,0 +1,19 @@
+
+<!-- Update to use a directive that looks at the properties and only prints the existing ones -->
+
+<div itemscope itemtype="http://schema.org/Person" class="type-sml">
+    <span itemprop="name">{{ address.title }} {{ address.firstname }} {{ address.lastname }}</span>
+    
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">
+            {{ address.address1 }}
+            {{ address.address2 }}<br />
+            {{ address.address3 }}
+        </span>
+        <span itemprop="addressLocality">{{ address.townCity }}</span>,
+        <span itemprop="addressRegion">{{ address.county }}</span>
+        <span itemprop="addressCountry">{{ address.country }}</span><br />
+        <span itemprop="postalCode">{{ address.postcode }}</span><br />
+    </div>
+    <span itemprop="telephone">{{ address.telephone }}</span>
+</div>

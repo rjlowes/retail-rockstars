@@ -1,0 +1,17 @@
+.rating {
+    font-size: 1.2em;
+
+    &--large {
+        font-size: 1.8em;
+    }
+}
+
+.rating__star {
+    color: $colour-primary;
+    font-style: normal;
+
+    &--half {
+        color: #343434;
+    }
+}
+

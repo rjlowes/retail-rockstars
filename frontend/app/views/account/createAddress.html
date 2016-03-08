@@ -1,0 +1,21 @@
+<section class="container">
+	<div class="row">
+		<h1 class="rm-margin-bottom">Add a new address</h1>
+		<header class="col-xs-4">
+			<p>Hi, Rich. This is your addressbook. From here you can manage every aspect of your delivery and billing information. You currently have (1) address.</p>
+			<ul class="">
+		        <li><a ui-sref="account.addressbooknew" class="">Back to dashboard</a></li>
+		    </ul>
+		</header>
+
+	    <div class="col-xs-8">
+		    <form name="addressForm" ng-submit="createAddress()" novalidate>
+		        <fieldset>
+		            <!--<legend>Create an address</legend>-->
+		            <ng-include src="'views/partials/fieldsets/address.html'" include-replace></ng-include>
+		        </fieldset>
+		        <button type="submit" class="btn btn--inverse">Save</button>
+		    </form>
+		</div>
+	</div>
+</section>

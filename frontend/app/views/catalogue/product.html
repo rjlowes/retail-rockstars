@@ -1,0 +1,86 @@
+<article itemscope itemtype="http://schema.org/Product" class="row">
+
+    <div class="col-sm-6">
+        <a href="" title="" itemprop="url">
+            <img src="http://www.abercrombieandfitchjakke.com/images/af/Abercrombie-and-Fitch-Feldspar-Brook-T-Shirts-483_LRG.jpg" itemprop="image" class="img-responsive" />
+        </a>
+    </div>
+
+    <div class="col-sm-6">
+        <h1 itemprop="name">{{ product.title }}</h1>
+
+        <p class="offer" itemscope itemtype="http://schema.org/Offer">
+            <span class="price" itemprop="price">&pound;100.00</span>
+            <!--<span class="availability" itemprop="availability">In stock!</span>-->
+        </p>
+        
+        <div class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+            <i class="icon-star">&#9733;</i>
+            <i class="icon-star">&#9733;</i>
+            <i class="icon-star">&#9733;</i>
+            <i class="icon-star">&#9733;</i>
+            <i class="icon-star-half">&#9733;</i>
+            <span class="visually-hidden"><span itemprop="ratingValue">4.5</span>/5</span>
+        </div>
+
+        <div itemprop="description">
+            <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
+            <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
+
+            <p><a role="button">More Information &#9654;</a></p>
+            
+            <!-- Long Description -->
+        </div>
+
+        <ng-include src="'views/product/_basket-form.html'"></ng-include>
+    </div>
+
+</article>
+
+
+
+<!-- OLD -->
+<article itemscope itemtype="http://schema.org/Product">
+    <a href="#" title="#" itemprop="url"><img src="#image" alt="#title" width="#" height="#" itemprop="image" /></a>
+    <h1 itemprop="name">Companion Cube</h1>
+    <div class="description" itemprop="description">
+        <p>The Companion Cube is your best friend and it loves you very much.</p>
+    </div><!--/end .description-->
+    <div class="rating" itemscope itemtype="http://schema.org/AggregateRating">
+        <p>Rating: <span itemprop="ratingValue">10</span> out of <span itemprop="bestRating">10</span> by <span itemprop="reviewCount">256</span> customers</p>
+    </div><!--/end .rating-->
+    <div class="offer" itemscope itemtype="http://schema.org/Offer">
+        <span class="price" itemprop="price">$100.00</span>
+        <span class="availability" itemprop="availability">In stock!</span>
+    </div><!--/end .offer-->
+    <a href="#" title="Add to Cart"><span>Add to Cart</span></a>
+    <ol class="review_list">
+        <li>
+            <article itemscoop itemtype="http://schema.org/Review">
+                <h1 itemprop="name">LOVED IT!!!</h1>
+                <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
+                <div class="review_content" itemprop="description">
+                    <p>Loved it!</p>
+                </div><!--/end .review_content-->
+            </article>
+        </li>
+        <li>
+            <article itemscoop itemtype="http://schema.org/Review">
+                <h1 itemprop="name">LOVED IT!!!</h1>
+                <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
+                <div class="review_content" itemprop="description">
+                    <p>Loved it!</p>
+                </div><!--/end .review_content-->
+            </article>
+        </li>
+        <li>
+            <article itemscoop itemtype="http://schema.org/Review">
+                <h1 itemprop="name">LOVED IT!!!</h1>
+                <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
+                <div class="review_content" itemprop="description">
+                    <p>Loved it!</p>
+                </div><!--/end .review_content-->
+            </article>
+        </li>
+    </ol>
+</article>

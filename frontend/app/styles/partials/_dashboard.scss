@@ -1,0 +1,46 @@
+// Temporary file for dashboard concept
+
+.no-gutter {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.dashboard {
+	background: #3a5d96;
+}
+
+// toolbar?
+.subnavbar {
+	background: #1c1d22;
+	color:#fff;
+	padding: 10px 0;
+}
+
+.infobox {
+	
+	//height: 100%;
+}
+
+.media-object {
+	overflow: hidden;
+}
+
+.media-object__img {
+	float: left;
+	width: 50%;		// TODO add to modifier --fixed-width
+
+	&--right {
+		float: right;
+	}
+}
+
+.media-object__content {
+	overflow: hidden;
+	position: relative;
+}
+
+.info-box {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}

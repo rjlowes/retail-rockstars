@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot?v=4.3.0');
+    src: url('../fonts/iconfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/iconfont.woff2?v=4.3.0') format('woff2'), url('../fonts/iconfont.woff?v=4.3.0') format('woff'), url('../fonts/iconfont.ttf?v=4.3.0') format('truetype'), url('../fonts/iconfont.svg?v=4.3.0#iconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"] {
+	display: inline-block;
+	font: normal normal normal 14px/1 iconfont;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+    vertical-align: middle
+}
+
+.icon-close:before {
+    content: "\ea01";
+}
+
+.icon-ellipsis:before {
+    content: "\ea02";
+}
+
+.icon-burger:before {
+    content: "\ea03";
+}
+
+.icon-dotted-plus:before {
+    content: "\ea04";
+}
+
+.icon-shopping-bag:before {
+    content: "\ea05";
+}
+
+.icon-secure-checkout:before {
+    content: "\ea06";
+}
+
+.icon-size-md {
+    font-size: 30px;
+}
+
+.icon-size-lg {
+    font-size: 55px;
+}
