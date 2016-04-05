@@ -1,3 +1,7 @@
+// square select
+// http://stackoverflow.com/questions/24210132/remove-border-radius-from-select-tag-in-bootstrap-3
+
+
 fieldset {
 
 }
@@ -19,9 +23,7 @@ legend {
 label,
 .label {
     font-size: 12px;
-    color: #46a5df;
-    //font-weight: bold;
-    //line-height: 2.5;
+    padding: 0 0 2px 1px;
 }
 
 // Form field wrapper

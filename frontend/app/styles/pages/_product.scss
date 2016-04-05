@@ -1,0 +1,17 @@
+// Temporary
+
+//@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+.mobile-gallery {
+	display: none;
+	@include media-breakpoint-down(sm) {
+		display: block;
+	}
+}
+
+.desktop-gallery {
+	display: none;
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+}

@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	uglify = require('gulp-uglify'),
 	// TODO change to browserify as gulp-browserify is no longer supported!!!
 	// browserify = require('gulp-browserify'),
 	browserify = require('browserify'),
@@ -22,5 +24,22 @@ gulp.task('scripts', function () {
 	return browserify('app/scripts/app.js')
 			.bundle()
 			.pipe(source('rockstars.js'))
+			// .pipe(gulp.src([
+			// 	'app/scripts/plugins/layerslider.transitions.js', 
+			// 	'app/scripts/plugins/layerslider.transitions.js', 
+			// 	'app/scripts/plugins/layerslider.kreaturamedia.jquery.js']))
 			.pipe(gulp.dest('.tmp/scripts'));
+});
+
+// TODO Need to look into browserify shim to bundle these files with the modules!
+gulp.task('libs', function() {
+  return gulp.src([
+		//'node_modules/gsap/src/uncompressed/TweenLite.js', 
+		//'node_modules/gsap/src/uncompressed/TimelineLite.js', 
+		'app/scripts/plugins/greensock.js',
+		'app/scripts/plugins/layerslider.transitions.js', 
+		'app/scripts/plugins/layerslider.kreaturamedia.jquery.js'])
+    .pipe(concat('libs.js'))
+    //.pipe(uglify())
+    .pipe(gulp.dest('.tmp/scripts'));
 });

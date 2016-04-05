@@ -14,6 +14,6 @@ gulp.paths = {
 rd('./gulp');
 
 
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['sass', 'libs', 'scripts', 'server', 'watch']);
 
 gulp.task('build', ['sass']);

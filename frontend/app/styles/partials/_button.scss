@@ -2,13 +2,14 @@
 // Basic button
 .btn {
     background-color: #77BD42;  // green
-    background-color: #009df5;  // blue
+    background-color: #29abe2;  // blue
     background-image: none;
     border: none;
     display: inline-block;
     color: white;
     cursor: pointer;
     font-family: $heading-font-family;
+    font-weight: bold;
     text-align: center;
 
     margin-bottom: 5px;
@@ -35,7 +36,7 @@
 }
 
 .btn--md {
-    @include btn-size(12px, $heading2-font-size, $heading2-line-height, 2px);
+    @include btn-size(12px, $heading3-font-size, 2, 2px);
 }
 
 

@@ -2,32 +2,39 @@
 
     <div class="row">
         
-        <div class="col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-12">
-            <h1 class="type-margin-clear" itemprop="name">{{ product.title }}</h1>
+        <div class="col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-7">
+            <h1 class="type-clear-margin" itemprop="name">{{ product.title }}</h1>
 
-            <p class="type-margin-clear" itemscope itemtype="http://schema.org/Offer">
+            <p class="type-lead" itemscope itemtype="http://schema.org/Offer">
                 <span class="price" itemprop="price">&pound;100.00</span>
                 <!--<span class="availability" itemprop="availability">In stock!</span>-->
             </p>
-            
-            
-            <img src="http://image1.superdry.com/static/images/products/upload463659292474402024.jpg" itemprop="image" class="img-responsive" />
 
+            <!--
             <ng-include src="'views/product/_star-rating.html'"></ng-include>
+            -->
+            
+            <div class="mobile-gallery">
+                <img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" />
+            </div>
 
             <div itemprop="description">
                 <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
-                <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
-
-                <p><a role="button">More Information &#9654;</a></p>
-                
                 <!-- Long Description -->
             </div>
 
             <ng-include src="'views/product/_basket-form.html'"></ng-include>
+
+            <ul class="list-std">
+<li>Premium collection, our highest quality fabrics. Seasonal collection, limited quantities.</li>
+<li>100% cotton; cotton is crisp and comfortable, ideal for any situation.</li>
+<li>108gsm, lightweight fabric made for warmer climates and seasons, great for layering.</li>
+<li>Plain weave; smooth fabric characterized by its lightweight breathability.</li>
+<li>Machine wash cold. Hang to dry. Iron on correct settings.</li>
+</ul>
         </div>
 
-        <div class="col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-12">
+        <div class="desktop-gallery col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-12">
             <a href="" title="" itemprop="url">
                 <img src="http://image1.superdry.com/static/images/products/upload463659292474402024.jpg" itemprop="image" class="img-responsive" />
             </a>
@@ -38,19 +45,20 @@
 
 
 <!-- OLD -->
+<!--
 <article itemscope itemtype="http://schema.org/Product">
     <a href="#" title="#" itemprop="url"><img src="#image" alt="#title" width="#" height="#" itemprop="image" /></a>
     <h1 itemprop="name">Companion Cube</h1>
     <div class="description" itemprop="description">
         <p>The Companion Cube is your best friend and it loves you very much.</p>
-    </div><!--/end .description-->
+    </div>
     <div class="rating" itemscope itemtype="http://schema.org/AggregateRating">
         <p>Rating: <span itemprop="ratingValue">10</span> out of <span itemprop="bestRating">10</span> by <span itemprop="reviewCount">256</span> customers</p>
-    </div><!--/end .rating-->
+    </div>
     <div class="offer" itemscope itemtype="http://schema.org/Offer">
         <span class="price" itemprop="price">$100.00</span>
         <span class="availability" itemprop="availability">In stock!</span>
-    </div><!--/end .offer-->
+    </div>
     <a href="#" title="Add to Cart"><span>Add to Cart</span></a>
     <ol class="review_list">
         <li>
@@ -59,7 +67,7 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
         <li>
@@ -68,7 +76,7 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
         <li>
@@ -77,8 +85,9 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
     </ol>
 </article>
+-->

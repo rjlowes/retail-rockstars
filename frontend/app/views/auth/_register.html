@@ -1,69 +1,92 @@
 
-<div class="col-md-6 col-md-push-3">
-
-    <div class="page-header col-md-12">
-        <h1 class="rm-margin-bottom">Register <span>Sign up to continue</span></h1>
+<div class="col-md-14 col-md-push-4">
+    <div class="page-header">
+        <h1 class="rm-margin-bottom">Sign up</h1>
     </div>
-    
-    <form name="registerForm" role="form" ng-submit="register(registerForm.$valid)" class="form-horizontal" novalidate>
-        
-        <!-- Customer name group -->
-        <div class="form-group">
-            <div class="col-xs-3">
+
+    <div class="col-xs-20 col-md-12">
+
+        <form name="registerForm" role="form" ng-submit="register(registerForm.$valid)" class="form-horizontal" novalidate>
+            
+            <!-- Customer name group -->
+            <div class="form-group">
+                <label for="title">Title</label>
                 <select name="title" id="title" ng-init="registration.title = registration.title || SALUTATIONS[0]" data-ng-model="registration.title" class="form-control" aria-required="true" aria-label="title" required>
                     <option ng-repeat="salutation in salutations" value="{{ salutation }}">{{ salutation }}</option>
                 </select>
             </div>
-            <div class="col-xs-4">
+            <div class="form-group">
+                <label for="firstname">First name</label>
                 <input aria-required="true" aria-label="First name" type="text" name="firstname" id="firstname" data-ng-model="registration.firstname" class="form-control" placeholder="First name" ng-minlength="2" ng-maxlength="30" required />
+                <div class="form-help" ng-messages="registerForm.firstname.$error" ng-if="registerForm.firstname.$touched">
+                    <label for="firstname" class="error" ng-message="minlength, maxlength, required">Firstname 2 to 30 characters</label>
+                </div>
             </div>
-            <div class="col-xs-5">
+            <div class="form-group">
+                <label for="lastname">Last name</label>
                 <input aria-required="true" aria-label="Lastname" type="text" name="lastname" id="lastname" data-ng-model="registration.lastname" class="form-control" placeholder="Last name" ng-minlength="2" ng-maxlength="30" required />
             </div>
-            <div class="form-help" ng-messages="registerForm.title.$error" role="alert" ng-if="registerForm.title.$touched">
-                <label for="title" class="error" ng-message="required">Title required</label>
-            </div>
-            <div class="form-help" ng-messages="registerForm.firstname.$error" ng-if="registerForm.firstname.$touched">
-                <label for="firstname" class="error" ng-message="minlength, maxlength, required">Firstname 2 to 30 characters</label>
-            </div>
-            <div class="form-help" ng-messages="registerForm.lastname.$error" ng-if="registerForm.lastname.$touched">
-                <label for="lastname" class="error" ng-message="minlength, maxlength, required">Lastname 2 to 30 characters</label>
-            </div>
-        </div>
 
-        <div class="form-group col-xs-12">
-            <input aria-required="true" aria-label="Telephone" type="text" name="telephone" id="telephone" data-ng-model="registration.telephone" class="form-control" placeholder="Telephone" ng-maxlength="50" required />
-            <div class="form-help" ng-messages="registerForm.telephone.$error" ng-if="registerForm.telephone.$touched">
-                <label for="telephone" class="error" ng-message="maxlength, required">Telephone 2 to 30 characters</label>
+            <div>
+                <div class="form-help" ng-messages="registerForm.title.$error" role="alert" ng-if="registerForm.title.$touched">
+                    <label for="title" class="error" ng-message="required">Title required</label>
+                </div>
+                
+                <div class="form-help" ng-messages="registerForm.lastname.$error" ng-if="registerForm.lastname.$touched">
+                    <label for="lastname" class="error" ng-message="minlength, maxlength, required">Lastname 2 to 30 characters</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="telephone">Phone number</label>
+                <input aria-required="true" aria-label="Telephone" type="text" name="telephone" id="telephone" data-ng-model="registration.telephone" class="form-control" placeholder="Telephone" ng-maxlength="50" required />
+                <div class="form-help" ng-messages="registerForm.telephone.$error" ng-if="registerForm.telephone.$touched">
+                    <label for="telephone" class="error" ng-message="maxlength, required">Telephone 2 to 30 characters</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
                 <input aria-required="true" arial-label="Email" type="email" name="email" id="email" data-ng-model="registration.email" class="form-control" placeholder="Email" required />
             </div>
-            <div class="col-xs-6">
+            <!--
+            <div class="form-group">
+                <label for="email-confirm">Confirm email</label>
                 <input aria-required="true" arial-label="Confirm email" type="email" name="emailConfirm" id="email-confirm" data-ng-model="registration.emailConfirm" class="form-control" placeholder="Confirm Email" />
+                <div class="form-help" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched">
+                    <label for="email" class="error" ng-message="email, required">Valid email required</label>
+                </div>
             </div>
-            <div class="form-help" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched">
-                <label for="email" class="error" ng-message="email, required">Valid email required</label>
-            </div>
-        </div>
+            -->
 
-        <div class="form-group">
-            <div class="col-xs-6">
+            <div class="form-group">
+                <label for="password">Password</label>
                 <input aria-required="true" arial-label="Password" type="password" name="password" id="password" data-ng-model="registration.password" class="form-control" placeholder="Password" />
             </div>
-            <div class="col-xs-6">
+            <!--
+            <div class="form-group">
                 <input aria-required="true" arial-label="Confirm password" type="password" name="passwordConfirm" id="password-confirm" ng-model="registration.passwordConfirm" class="form-control" placeholder="Confirm password" compare-to="registration.password" />
             </div>
-            <div class="form-help" ng-messages="registerForm.passwordConfirm.$error" ng-if="registerForm.passwordConfirm.$touched">
-                <label for="password-confirm" class="error" ng-message="compareTo">Passwords must match</label>
+            -->
+
+            <div class="form-group">
+                <div class="form-help" ng-messages="registerForm.passwordConfirm.$error" ng-if="registerForm.passwordConfirm.$touched">
+                    <label for="password-confirm" class="error" ng-message="compareTo">Passwords must match</label>
+                </div>
             </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn--block" ng-disabled="registerForm.$invalid">Sign up!</button>
+                <p class="type-sml">Already have an account? <a ui-sref="auth.login">Log in here!</a></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-xs-20 col-xs-push-2 col-md-12">
+        <div class="pull-left best-fit-info hide-mobile">
+        <h2>Your Best Fit</h2>
+        <p>If your order doesn’t fit the way it should, let us know right away.</p>
+        <h2>Free Global Shipping</h2>
+        <p>On orders over $150.</p>
         </div>
-        
-        <div class="col-xs-12">
-            <button type="submit" class="btn btn--block" ng-disabled="registerForm.$invalid">Sign up!</button>
-            <p class="type-sml">Already have an account? <a ui-sref="auth.login">Log in here!</a></p>
-        </div>
-    </form>
+    </div>
 </div>

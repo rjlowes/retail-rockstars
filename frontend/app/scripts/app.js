@@ -1,7 +1,8 @@
 'use strict';
 
 
-var angular = require('angular'),
+var jQuery = require('jquery'),
+    angular = require('angular'),
     ngAnimate = require('angular-animate'),
     ngAria = require('angular-aria'),
     ngCookies = require('angular-cookies'),
@@ -19,6 +20,7 @@ var angular = require('angular'),
     fieldsetCustomerDirective = require('./directives/fieldset-customer.directive'),
     fieldsetAddressDirective = require('./directives/fieldset-address.directive'),
     csrfService = require('./services/csrf.service'),
+    scrollFactory = require('./services/scroll.factory'),
     addressService = require('./services/address.service'),
     basketService = require('./services/basket.service'),
     urlService = require('./services/url.service'),
@@ -49,6 +51,7 @@ angular
         .directive('fieldsetCustomer', fieldsetCustomerDirective)
         .directive('fieldsetAddress', fieldsetAddressDirective)
         .factory('csrfService', csrfService)
+        .factory('scrollFactory', scrollFactory)
         .service('addressService', addressService)
         .service('basketService', basketService)
         .service('urlService', urlService)
@@ -67,3 +70,4 @@ angular
         .controller('ProductCtrl', ProductController)
         .controller('SessionStatusCtrl', SessionStatusController)
         .controller('StyleguideCtrl', StyleguideController);
+

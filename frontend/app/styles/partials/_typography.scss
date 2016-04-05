@@ -6,8 +6,7 @@ html {
 body {
     color: $body-colour;
     font-family: $body-font-family;
-    font-size: 1.6em;
-    line-height: 1.5;
+    //font-size: 62.5%;
 }
 
 h1, .h1 {
@@ -15,29 +14,9 @@ h1, .h1 {
     font-family: $heading-font-family;
     @include rem($heading1-font-size);    /* 32px */
     line-height: $heading1-line-height;   /* 48px */
-    margin-bottom: #{$heading1-line-height/2}em;
-    margin-top: #{$heading1-line-height/2}em;
-}
-
-// Clears the top and bottom margin (preserves vertical rhythm)
-.type-margin-clear {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-// Moves the margin to the top, preserving vertical rhythm
-.h1-margin-top {
-    margin-bottom: 0;
-    margin-top: #{$heading1-line-height}em;
-}
-
-// Moves the margin to the bottom, preserving vertical rhythm
-.h1-margin-bottom {
     margin-bottom: #{$heading1-line-height}em;
-    margin-top: 0;
+    // margin-top: #{$heading1-line-height/2}em;
 }
-
-.h1--spacer-top {margin-top: #{$heading1-line-height}em;}
 
 h2, .h2 {
     color: $heading-colour;
@@ -64,10 +43,18 @@ h4, .h4 {
     @include rem($heading4-font-size);
 }
 
-p, .p {
+p, .p { // This one is broken
     @include rem($paragraph-font-size);
     line-height: $paragraph-line-height;  //base line 24px
     margin-bottom: #{$paragraph-line-height}em;
+}
+
+label {
+    color: $label-colour;
+    display: block;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .type-lead {
@@ -88,6 +75,17 @@ p, .p {
 .type-mark {
     color: $colour-primary;
 }
+
+// Clears the top and bottom margin (preserves vertical rhythm)
+.type-clear-margin {
+    margin-bottom: 0;
+    margin-top: 0;
+    & > * {
+        margin-bottom: 0;
+        margin-top: 0; 
+    }
+}
+
 
 // Move to general utils
 .rm-margin {margin-bottom: 0; margin-top: 0;}
@@ -142,13 +140,7 @@ dd {
 }
 
 // Think these are repeated already in utils
-.pull-down {
-    margin-top: 5px;
-}
 
-.pull-right {
-    float: right;
-}
 
 .page-header {
     border-bottom: 1px dotted #d5d5d5;
