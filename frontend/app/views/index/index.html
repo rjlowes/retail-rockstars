@@ -1,5 +1,78 @@
 
-<ng-include src="'views/index/_gallery.html'"></ng-include>
+<div id="slider-wrapper" ng-init="startGallery()">
+	<!--<div id="layerslider" style="width:1280px;height:720px;max-width: 1280px;">-->
+	<div id="layerslider" style="height:470px; width:100%;" class="ls-fullwidth">
+		<div class="ls-slide" data-ls="slidedelay:8000;transition2d:1;">
+			
+			<img src="/images/content/home/gallery/slides/accessories/bg.jpg" class="ls-bg" alt="Slide background" />
+			
+			<img src="/images/content/home/gallery/slides/accessories/watch-face.png" 
+				class="ls-l" 
+				alt="Watch face"
+				style="right:-100px; left:auto;"
+				data-ls="offsetxin:200;offsetxout:-200;easein:easeInOutBack;" />
+
+			<img src="/images/content/home/gallery/slides/accessories/watch-black.png" 
+				class="ls-l" 
+				alt="Watch face"
+				style="left:800px; bottom: 0; top: auto;"
+				data-ls="offsetxin:500;offsetxout:-100;delayin:500;easein:easeInOutBack;" />
+
+			<img src="/images/content/home/gallery/slides/accessories/watch-green.png" 
+				class="ls-l" 
+				alt="Watch face"
+				style="left:700px; bottom: 0; top: auto;"
+				data-ls="offsetxin:500;offsetxout:-300;delayin:900;easein:easeInOutBack;" />
+
+			<img src="/images/content/home/gallery/slides/accessories/watch-blue.png" 
+				class="ls-l" 
+				alt="Watch face"
+				style="left:600px; bottom: 0; top: auto;"
+				data-ls="offsetxin:500;offsetxout:-500;delayin:1300;easein:easeInOutBack;" />
+			
+			<h1 class="ls-l" 
+				style="top:100px;left:50px;font-weight: 300;font-size:60px;color:#ffffff;text-transform:uppercase;white-space: nowrap;" 
+				data-ls="offsetyin:-100;offsetyout:-100;offsetxin:0;offsetxout:0;">Watch Factory</h1>
+
+			<h2 class="ls-l" 
+				style="width:400px;top:180px;left:50px;color:#fff;font-weight:500;font-size:20px;text-transform:uppercase;" 
+				data-ls="offsetxin:-100;offsetxout:-100;delayin:200;">
+				Accessorise with our stunning new range of fashionalble watches from a host of quality labels
+			</h2>
+
+			<a href="" 
+				class="btn ls-l" 
+				style="background:#2d2d2d; top:290px; left: 50px; width:200px; padding:20px;"
+				data-ls="offsetyin:100;offsetyout:100;offsetxin:0;offsetxout:0;delayin:400">Shop Watches <i class="icon-dotted-plus"></i></a>
+		</div>
+		
+		<div class="ls-slide" data-ls="slidedelay:9500;transition2d:1;timeshift:-3000;">
+
+			<img src="/images/content/home/gallery/slides/womens/bg.jpg" class="ls-bg" alt="Slide background"/>
+
+			<h1 class="ls-l" 
+				style="top:100px;left:50px;font-weight: 300;font-size:60px;color:#ffffff;text-transform:uppercase;white-space: nowrap;" 
+				data-ls="offsetyin:-100;offsetxin:0;">Wear the Look</h1>
+
+			<h2 class="ls-l" 
+				style="width:400px;top:180px;left:50px;color:#fff;font-weight:500;font-size:20px;text-transform:uppercase;" 
+				data-ls="offsetxin:-100;delayin:200;">
+				Get the most fashionable looks from our extensive range of to designers
+			</h2>
+
+			<a href="" 
+				class="btn ls-l" 
+				style="background:#2d2d2d; top:290px; left: 50px; width:200px; padding:20px;"
+				data-ls="scaleyin:1; scalexin:1; offsetyin:100; offsetxin:0; delayin:400">Shop Womens <i class="icon-dotted-plus"></i></a>
+
+			<img src="/images/content/home/gallery/slides/womens/model.png" 
+				class="ls-l" 
+				alt="Watch face"
+				style="left:70%; bottom:0; top: auto;"
+				data-ls="offsetxin:200;easein:easeInOutBack;delayin:600" />
+		</div>
+	</div>
+</div>
 
 
 <section style="padding: 80px 0;" class="spacer--vertical-reg container" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
@@ -16,34 +89,29 @@
 		<div class="col-md-8">
 			<img src="/images/content/home/gallery/slide1/jackets.jpg" 
 				class="img-responsive scrollable--slide-up" 
-				alt=""
-				style="" />
+				alt=""/>
 		</div>
 		<div class="col-md-8">
 			<img src="/images/content/home/gallery/slide1/jackets.jpg" 
 				class="img-responsive scrollable--slide-up scrollable--slide-up--delay100" 
-				alt=""
-				style="" />
+				alt="" />
 		</div>
 		<div class="col-md-8">
 			<img src="/images/content/home/gallery/slide1/jackets.jpg" 
 				class="img-responsive scrollable--slide-up scrollable--slide-up--delay200" 
-				alt=""
-				style="" />
+				alt="" />
 		</div>
 	</div>
 	<div class="row spacer--vertical-reg">
 		<div class="col-md-12">
 			<img src="/images/content/home/gallery/slide1/dresses.jpg" 
 				class="img-responsive scrollable--slide-right" 
-				alt=""
-				style="" />
+				alt="" />
 		</div>
 		<div class="col-md-12">
 			<img src="/images/content/home/gallery/slide1/dresses.jpg" 
 				class="img-responsive scrollable--slide-left" 
-				alt=""
-				style="" />
+				alt="" />
 		</div>
 	</div>
 </div>
