@@ -9,6 +9,7 @@ gulp.task('iconfont', function(){
       appendUnicode: true, // recommended option 
       formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available 
       timestamp: runTimestamp, // recommended to get consistent builds when watching files 
+      normalize:true
     }))
       .on('glyphs', function(glyphs, options) {
         // CSS templating, e.g. 

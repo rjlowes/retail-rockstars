@@ -55,8 +55,20 @@
 .pull-down {
     margin-top: 5px;
 }
-.spacer--vertical-reg {
+.spacer--vertical-reg { // TODO remove
     margin-top: 10px;
+}
+
+.spacer {
+    margin-top: 10px;
+
+    &--md {
+        margin-top: 20px;
+    }
+
+    &--lg {
+        margin-top: 30px;
+    }
 }
 
 // Toggling content

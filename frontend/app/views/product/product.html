@@ -14,8 +14,25 @@
             <ng-include src="'views/product/_star-rating.html'"></ng-include>
             -->
             
-            <div class="mobile-gallery">
+            <div class="mobile-gallery" ng-init="startMobileGallery()">
+                <!--
                 <img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" />
+                -->
+                <div class="Wallop Wallop--slide" id="wallop-mobile">
+                    <div class="Wallop-list">
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    </div>
+                    <button class="Wallop-buttonPrevious btn-pager btn-pager--left">
+                        <span>Previous</span>
+                    </button>
+                    <button class="Wallop-buttonNext btn-pager btn-pager--right">
+                        <span>Next</span>
+                    </button>
+                </div>
             </div>
 
             <div itemprop="description">
@@ -25,19 +42,31 @@
 
             <ng-include src="'views/product/_basket-form.html'"></ng-include>
 
-            <ul class="list-std">
-<li>Premium collection, our highest quality fabrics. Seasonal collection, limited quantities.</li>
-<li>100% cotton; cotton is crisp and comfortable, ideal for any situation.</li>
-<li>108gsm, lightweight fabric made for warmer climates and seasons, great for layering.</li>
-<li>Plain weave; smooth fabric characterized by its lightweight breathability.</li>
-<li>Machine wash cold. Hang to dry. Iron on correct settings.</li>
-</ul>
+            <ul class="list-linear--bullet spacer">
+                <li>Premium collection, our highest quality fabrics. Seasonal collection, limited quantities.</li>
+                <li>100% cotton; cotton is crisp and comfortable, ideal for any situation.</li>
+                <li>108gsm, lightweight fabric made for warmer climates and seasons, great for layering.</li>
+                <li>Plain weave; smooth fabric characterized by its lightweight breathability.</li>
+                <li>Machine wash cold. Hang to dry. Iron on correct settings.</li>
+            </ul>
         </div>
 
-        <div class="desktop-gallery col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-12">
-            <a href="" title="" itemprop="url">
-                <img src="http://image1.superdry.com/static/images/products/upload463659292474402024.jpg" itemprop="image" class="img-responsive" />
-            </a>
+        <div class="desktop-gallery col-xs-20 col-xs-push-2 col-sm-24 col-sm-push-0 col-md-12 col-md-push-2" ng-init="startDesktopGallery()">
+            <div class="Wallop Wallop--slide" id="wallop-desktop">
+                <div class="Wallop-list">
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                </div>
+                <button class="Wallop-buttonPrevious btn-pager btn-pager--left">
+                    <span>Previous</span>
+                </button>
+                <button class="Wallop-buttonNext btn-pager btn-pager--right">
+                    <span>Next</span>
+                </button>
+            </div>
         </div>
     </div>
 </article>

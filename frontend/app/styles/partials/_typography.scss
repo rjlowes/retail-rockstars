@@ -6,7 +6,6 @@ html {
 body {
     color: $body-colour;
     font-family: $body-font-family;
-    //font-size: 62.5%;
 }
 
 h1, .h1 {
@@ -15,7 +14,6 @@ h1, .h1 {
     @include rem($heading1-font-size);    /* 32px */
     line-height: $heading1-line-height;   /* 48px */
     margin-bottom: #{$heading1-line-height}em;
-    // margin-top: #{$heading1-line-height/2}em;
 }
 
 h2, .h2 {
@@ -102,6 +100,12 @@ a {
 .list-std {
     font-size: 1.2rem;
     line-height: 1.5rem;
+}
+
+li {
+    @include rem($type-list-font-size);
+    line-height: $type-list-line-height;
+    margin-bottom: #{$type-list-font-size/2}em;
 }
 
 dl {

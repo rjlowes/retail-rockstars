@@ -67,3 +67,47 @@
     background: #ff8647;
     box-shadow: inset 0 1px rgba(255,255,142,.2),0 0 3px rgba(0,0,0,.25);
 }
+
+
+.btn-pager {
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: $btn-default-colour;
+    cursor: pointer;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    position: absolute;
+    top: 50%;
+
+    > span {
+        position: absolute;
+        text-indent: -9999px;
+    }
+
+    &[disabled=disabled] {
+        display: none;
+    }
+
+    &::before {
+        content: "\ea07";
+        display: inline-block;
+        font: normal normal normal 14px/1 iconfont;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        vertical-align: middle;
+    }
+
+    &--left {
+        transform: rotate(180deg);
+    }
+
+    &--right {
+        right: 0;
+    }
+}

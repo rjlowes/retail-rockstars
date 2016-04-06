@@ -1,5 +1,7 @@
 'use strict';
 
+var Wallop = require('Wallop');
+
 /**
  * @ngdoc function
  * @name yoApp.controller:ProductCtrl
@@ -35,6 +37,16 @@ module.exports = function ($rootScope, $scope, $stateParams, $http, urlService) 
                 console.log('broadcasting');
                 $rootScope.$broadcast('basketUpdate');
              });
+    };
+
+    $scope.startMobileGallery = function () {
+        var gallery = document.querySelector('#wallop-mobile');
+        var slider = new Wallop(gallery, {carousel: false});
+    };
+
+    $scope.startDesktopGallery = function () {
+        var gallery = document.querySelector('#wallop-desktop');
+        var slider = new Wallop(gallery, {carousel: false});
     };
 };
 
