@@ -37,6 +37,6 @@
 
 <ol class="page-bullets">
     <li class="page-bullets__item" data-ng-repeat="i in range(pagingData.totalPages) track by $index">
-        <a href="" class="page-bullets__link" data-ng-class="{'page-bullets__link--selected' : pagingData.number === $index}" data-ng-click="selectPage($index + 1)" aria-label="Select page {{ $index + 1 }}">Select page {{ $index + 1 }}</a>
+        <a href="" class="page-bullets__link" data-ng-class="{'page-bullets__link--selected' : pagingData.number === $index}" data-ng-click="selectPage($index + 1)" aria-label="Select page {{ $index + 1 }}">{{ $index + 1 }}</a>
     </li>
 </ol>

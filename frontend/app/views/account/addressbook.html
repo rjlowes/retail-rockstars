@@ -1,18 +1,40 @@
+<section class="container" ng-init="findAddresses()">
+	<div class="col-md-14 col-md-push-4">
+	    <div class="page-header">
+	        <h1 class="rm-margin-bottom">Your addressbook</h1>
+	    </div>
 
+	    <div class="col-xs-20 col-md-12">
+	        <!-- Print the addresses -->
+		    <ng-include src="'views/account/_addresses.html'"></ng-include>
+	    </div>
+
+		<!-- header -->
+	    <div class="col-xs-20 col-xs-push-2 col-md-12">
+
+			<p>Hi, Rich. This is your addressbook. From here you can manage every aspect of your delivery and billing information. You currently have (1) address.</p>
+			<ul class="">
+		        <li><a ui-sref="account.addressbooknew" class="">Create a new address</a></li>
+		    </ul>
+	    </div>
+	</div>
+</section>
+
+
+<!--
 <section class="container" ng-init="findAddresses()">
 
 	<div class="row">
 		<h1 class="rm-margin-bottom">Your addressbook</h1>
 		<header class="col-xs-8">
-			
 			<p>Hi, Rich. This is your addressbook. From here you can manage every aspect of your delivery and billing information. You currently have (1) address.</p>
 			<ul class="">
 		        <li><a ui-sref="account.addressbooknew" class="">Create a new address</a></li>
 		    </ul>
 		</header>
 
-	    <!-- Print the addresses -->
 	    <ng-include src="'views/account/_addresses.html'"></ng-include>
     </div>
 
 </section>
+-->

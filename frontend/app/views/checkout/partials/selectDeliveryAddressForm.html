@@ -5,8 +5,15 @@
     <fieldset>
         <legend>Choose from your addressbook</legend>
         <div class="form-group">
-            <select id="customerAddresses" class="form-control" ng-model="selectAddressData.addressId">
+
+            <!--
+            <select id="customerAddresses" ng-init="selectAddressData.addressId=addresses[0].id" class="form-control" ng-model="selectAddressData.addressId">
                 <option ng-repeat="address in addresses" value="{{ address.id }}">{{ address.fullname }}, {{ address.address1 }}</option>
+            </select>
+            -->
+
+            <select id="customerAddresses"class="form-control" ng-model="selectAddressData.selectedAddress"
+                ng-options="address.id as (address.fullname + ', ' + address.address1) for address in addresses track by address.id">
             </select>
         </div>
         <!-- DRY this up

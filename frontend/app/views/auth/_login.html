@@ -1,28 +1,40 @@
 
-<div class="col-sm-6 col-sm-push-3">
-
-    <div class="page-header col-md-12">
-        <h1 class="rm-margin-bottom">Login <span>Sign in to continue</span></h1>
+<div class="col-md-14 col-md-push-4">
+    <div class="page-header">
+        <h1 class="rm-margin-bottom"><span>Sign in to continue</span></h1>
     </div>
 
-    <form name="loginForm" role="form" data-ng-submit="login(loginForm.$valid)" class="form-horizontal">
-        
-        <div class="form-group col-xs-12">
-            <input aria-label="Email" type="email" name="email" id="email" data-ng-model="credentials.email" class="form-control" placeholder="Email" required />
-            <div class="form-help" ng-messages="loginForm.email.$error" role="alert" ng-if="loginForm.email.$touched">
-                <label for="email" class="error" ng-message="required">Email required</label>
+    <div class="col-xs-20 col-md-12">
+        <form name="loginForm" role="form" data-ng-submit="login(loginForm.$valid)" class="form-horizontal">
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input aria-label="Email" type="email" name="email" id="email" data-ng-model="credentials.email" class="form-control" placeholder="Email" required />
+                <div class="form-help" ng-messages="loginForm.email.$error" role="alert" ng-if="loginForm.email.$touched">
+                    <label for="email" class="error" ng-message="required">Email required</label>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group col-xs-12">
-            <input aria-label="Password" type="password" name="password" id="password" data-ng-model="credentials.password" class="form-control" placeholder="Password" required />
-            <div class="form-help" ng-messages="loginForm.password.$error" role="alert" ng-if="loginForm.password.$touched">
-                <label for="password" class="error" ng-message="required">Password required</label>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input aria-label="Password" type="password" name="password" id="password" data-ng-model="credentials.password" class="form-control" placeholder="Password" required />
+                <div class="form-help" ng-messages="loginForm.password.$error" role="alert" ng-if="loginForm.password.$touched">
+                    <label for="password" class="error" ng-message="required">Password required</label>
+                </div>
             </div>
+
+            <button type="submit" class="btn btn--block" ng-disabled="loginForm.$invalid">Login Now</button>
+        </form>
+
+        <p>Not registered yet? <a ui-sref="auth.register">Sign up here!</a></p>
+    </div>
+
+    <div class="col-xs-20 col-xs-push-2 col-md-12">
+        <div class="pull-left best-fit-info hide-mobile">
+        <h2>Your Best Fit</h2>
+        <p>If your order doesn’t fit the way it should, let us know right away.</p>
+        <h2>Free Global Shipping</h2>
+        <p>On orders over $150.</p>
         </div>
-
-        <button type="submit" class="btn btn--block" ng-disabled="loginForm.$invalid">submit</button>
-    </form>
-
-    <p>Not registered yet? <a ui-sref="auth.register">Sign up here!</a></p>
+    </div>
 </div>

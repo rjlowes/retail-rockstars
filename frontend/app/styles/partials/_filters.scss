@@ -11,8 +11,13 @@
 }
 
 .filter-list__item {
+	margin-bottom: 0;
 	position: relative;
 	width: 33.3%;
+
+	&:hover {
+		background-color: $border-color;
+	}
 }
 
 .filter-list__item-hd {
@@ -36,10 +41,72 @@
 }
 
 .filter-list__item-content {
+	background: #fff;
+	border: 1px solid #eee;
 	display: none;
+	padding: 5px 10px;
 	position: absolute;
+	width: 145px;
+	z-index: 1;
 
 	.filter-list__item:hover & {
 		display: block;
+	}
+}
+
+.filter {
+	color: #C8C8C8;
+	font-family: $heading-font-family;
+	font-size: 11px;
+	letter-spacing: 1px;
+	line-height: 25px;
+	margin: 5px 0;
+	padding-left: 36px;
+	position: relative;
+	text-transform: uppercase;
+
+	&::after {
+		content: '';
+		border-radius: 20px;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate3d(0, -50%, 0);
+		width: 20px;
+		height: 20px;
+	}
+
+	&--selected {
+		color: #333;
+		font-weight: bold;
+	}
+
+	&--selected::after {
+		border: 2px solid #333;
+	}
+
+	&-colour--all-colours::after {
+		background: white;
+	}
+
+	&-colour--red::after {
+		background: red;
+	}
+
+	&-colour--green::after {
+		background: green;
+	}
+
+	&-colour--blue::after {
+		background: blue;
+	}
+
+	&-colour--yellow::after {
+		background: yellow;
+	}
+
+	&-colour--black::after {
+		background: black;
 	}
 }

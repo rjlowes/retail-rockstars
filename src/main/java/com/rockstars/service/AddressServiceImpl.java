@@ -47,9 +47,11 @@ public class AddressServiceImpl implements AddressService {
         
         if(oldAddress == null) {
             throw new ServiceException("Address not found for existing customer");
-        }        
+        }
         
-        addressRepository.save(address);
+        oldAddress.copyAddress(address);
+        addressRepository.save(oldAddress);
+        
         return address;
     }
 

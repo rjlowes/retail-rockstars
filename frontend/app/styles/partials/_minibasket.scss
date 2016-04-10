@@ -1,62 +1,49 @@
-.minibasket {
-    display: inline-block;
-
-    //float: right;
-    position: relative;
-    //width: 300px;   // ??
-}
-
-.minibasket__summary {
-
-}
-
 .minibasket__reveal {
-    @extend .grad-light;
-
-    border: 1px solid #59595b;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5) inset;
-    // height: 300px;
+    background: #fff;
+    border: 1px solid $border-color;
+    display: none;
+    padding: 10px;
     position: absolute;
     right: 0;
     text-align: left;
     top: 100%;
     width: 300px;
-
-    // hide for now
-    display: none;
-    
     z-index: 1;
 
     .minibasket & {
         display: none;
     }
 
-    .minibasket:hover & {
-        display: block;
+    @include media-breakpoint-up(md) {
+        .navbar__basket:hover & {
+            display: block;
+        }
     }
 }
 
 .minibasket__list {
-    // border-bottom: 1px solid #b4b4b4;
     height: 186px;
+    margin-top: 10px;
     overflow: hidden;
 }
 
 .minibasket__list-item {
+    height: 93px;
+}
 
-    height: 93px;   // ???
+.minibasket__list-item-body {
+    padding-top: 10px;
+}
 
-    // override the icon button
-    .btn-link {
-        float: right;
-        line-height: 1;
-        width:1.5em;
-    }
+.minibasket__list-item-link {
+    color: $heading-colour;
+    font-size: 20px;
+    float: right;
+    line-height: 1;
+    width:1.5em;
 }
 
 .minibasket__btn {
-
     background: #ebebeb;
     cursor: pointer;
     display: block;
@@ -78,20 +65,8 @@
 }
 
 .minibasket__footer {
-    border-top: 1px solid #e9e9e9;
-    padding: 10px;
-    position: relative;
-
-    &::before {
-        border-top: 1px solid #b4b4b4;
-        content: ' ';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-
-    }
+    border-top: 1px solid $border-color;;
+    padding: 10px 0;
 }
 
 .minibasket__overlay {

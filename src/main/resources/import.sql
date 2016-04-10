@@ -3,7 +3,7 @@ INSERT INTO country (id, name) VALUES('UK', 'United Kingdom');
 INSERT INTO customer (id, fullname, title, firstname, lastname, telephone, email, password) VALUES (1, 'Mr John Smith', 'Mr', 'John', 'Smith','07788777666', 'username@test.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
 
 -- INSERT INTO address (id, title, firstname, lastname, label, address1, town_city, country_id, postcode, customer_id) VALUES (1, 'Mr', 'User', 'Name', 'Home', 'Address Line 1', 'Testtown', 'UK', 'TE456ST', 1);
-INSERT INTO address (id, fullname, title, firstname, lastname, label, address1, town_city, country, postcode, customer_id) VALUES (1, 'Mr John Smith', 'Mr', 'User', 'Name', 'Home', 'Address Line 1', 'Testtown', 'UK', 'TE456ST', 1);
+INSERT INTO address (id, fullname, title, firstname, lastname, telephone, label, address1, town_city, country, postcode, customer_id) VALUES (1, 'Mr John Smith', 'Mr', 'User', 'Name', '07766666555', 'Home', 'Address Line 1', 'Testtown', 'UK', 'TE456ST', 1);
 
 INSERT INTO category (id, name) VALUES ('mens', 'Menswear');
 INSERT INTO category (id, name) VALUES ('womens', 'Womenswear');

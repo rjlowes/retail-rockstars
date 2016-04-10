@@ -60,7 +60,9 @@ public class Address {// extends AbstractPersistable<Long> {
     @JsonIgnore
     private Customer customer;
     
-
+    public Address() {
+    }
+    
     public Long getId() {
         return id;
     }
@@ -187,6 +189,23 @@ public class Address {// extends AbstractPersistable<Long> {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+    
+    public void copyAddress(Address address) {
+        // copy the address detail here
+        title = address.getTitle();
+        firstname = address.getFirstname();
+        lastname = address.getLastname();
+        fullname = address.getFullname();
+        telephone = address.getTelephone();
+        label = address.getLabel();
+        address1 = address.getAddress1();
+        address2 = address.getAddress2();
+        address3 = address.getAddress3();
+        townCity = address.getTownCity();
+        county = address.getCounty();
+        postcode = address.getPostcode();
+        country = address.getCountry();
     }
 
     @Override

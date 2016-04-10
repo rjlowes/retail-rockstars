@@ -6,6 +6,8 @@
     height: 50px;
     padding: 10px 0;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 100;
 }
 
 .navbar__btn {
@@ -45,6 +47,7 @@
         flex-direction: column;
         margin-top: 50px;
         height: 100%;
+        min-height: 100vh;
         left: 0;
         padding: 2.5em 1.5em 0;
         position: absolute;
@@ -73,7 +76,9 @@
 
 .navbar__basket {
     float: right;
-    width: 40px;
+    margin: 0 20px;
+    position: relative;
+    width: auto;
 }
 
 

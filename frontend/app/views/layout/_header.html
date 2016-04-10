@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="navbar__basket">
+<div class="navbar__basket" ng-controller="BasketCtrl" ng-init="updateBasket()">
     <ng-include src="'views/basket/minibasket.html'"></ng-include>
 </div>
 
@@ -59,51 +59,3 @@
         </ul>
     </div>
 </nav>
-
-<!--
-<div class="header__links" ng-controller="SessionStatusCtrl">
-    <ul class="list-linear list-linear--tight">
-        <li class="minibasket" data-ng-include="'views/basket/minibasket.html'" data-ng-controller="BasketCtrl"></li>
-        
-        <li class="reveal">
-            <span class="icon-ellipsis icon-size-md reveal__btn"></span>
-            <div class="reveal__bd">
-                <ul class="list-lined list-lined--solid">
-                    <li>
-                        <a href="">stores</a>
-                    </li>
-                    <li class="action-list__item" ng-hide="customer === null">
-                        <a href="/#/secure/account">account</a>
-                    </li>
-                    <li class="action-list__item" ng-hide="customer === null">
-                        <a href="" ng-click="logout()">logout</a>
-                    </li>
-                    <li class="action-list__item" ng-hide="customer !== null">
-                        <a ui-sref="auth.login">account</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-</div>
--->
-
-        <!--
-        <div data-ng-include="'views/basket/minibasket.html'" class="minibasket" data-ng-controller="BasketCtrl"></div>
-        -->
-
-
-
-<!-- TODO add AuthController nested -->
-
-<!--
-<nav class="toolbar col-xs-12">
-    <ul class="breadcrumb">
-        <li class="breadcrumb__item"><a href="">home</a></li>
-        <li class="breadcrumb__item"><a href="">store</a></li>
-        <li class="breadcrumb__item"><a href="">t-shirts</a></li>
-    </ul>
-</nav>
--->
-
-

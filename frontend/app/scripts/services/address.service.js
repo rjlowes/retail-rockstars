@@ -22,7 +22,7 @@ module.exports = function ($http, urlService) {
     };
 
     this.update = function (address) {
-        return $http.put('/api/addresses/' + id, address);
+        return $http.put('/api/addresses/' + address.id, address);
     };
 
     this.destroy = function (id) {

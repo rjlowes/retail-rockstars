@@ -15,13 +15,16 @@ module.exports = function ($scope, $state, addressService, basketService, SALUTA
     addressService.findAll().success(function (data) {
         $scope.addresses = data;
         $scope.addressFormData.title = SALUTATIONS[0];
+        if (data.length > 0) {
+            // http://stackoverflow.com/questions/18194255/how-to-have-a-default-option-in-select-box-angular-js#answer-29564802
+            $scope.selectAddressData.selectedAddress = $scope.addresses[0];
+        }
     });
     
     $scope.selectDeliveryAddress = function () {
         
         // TODO validate
-
-        var addressId = $scope.selectAddressData.addressId
+        var addressId = $scope.selectAddressData.selectedAddress.id;
 
         basketService.selectDeliveryAddress(addressId).success(function () {
             $state.go('checkout.billing');
@@ -35,7 +38,7 @@ module.exports = function ($scope, $state, addressService, basketService, SALUTA
         var address = angular.copy($scope.addressForm);
         // TODO validate data
         addressService.create(address).success(function () {
-                
+            $state.go('checkout.billing');
         }).error(function () {
 
         });

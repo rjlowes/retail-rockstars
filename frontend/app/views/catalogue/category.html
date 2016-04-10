@@ -17,19 +17,29 @@
         <li class="filter-list__item">
             <span class="filter-list__item-hd">Colour</span>
             <ul class="filter-list__item-content">
-                <li>Item</li>
+                <li class="filter filter-colour--all-colours filter--selected">All colours</li>
+                <li class="filter filter-colour--red">Red</li>
+                <li class="filter filter-colour--green">Green</li>
+                <li class="filter filter-colour--blue">Blue</li>
+                <li class="filter filter-colour--yellow">Yellow</li>
+                <li class="filter filter-colour--black filter--selected">Black</li>
             </ul>
         </li> 
         <li class="filter-list__item">
             <span class="filter-list__item-hd">Style</span>
             <ul class="filter-list__item-content">
-                <li>Item</li>
+                <li class="filter">All</li>
+                <li class="filter">Plain</li>
+                <li class="filter">Icon</li>
+                <li class="filter">Sports</li>
             </ul>
         </li> 
         <li class="filter-list__item">
             <span class="filter-list__item-hd">Price</span>
             <ul class="filter-list__item-content">
-                <li>Item</li>
+                <li class="filter">Default</li>
+                <li class="filter">Low to high</li>
+                <li class="filter">High to low</li>
             </ul>
         </li>  
     </ul>
@@ -44,8 +54,8 @@
                     <img src="http://image1.superdry.com/static/images/products/upload463659292474402024.jpg" class="img-responsive" />
                 </a>
                 <div class="thumb__content">
-                    <h2 class="type-margin-clear">({{ product.id }}) {{ product.title }}</h2>
-                    <p class="offer" itemscope itemtype="http://schema.org/Offer">
+                    <h2 class="type-clear-margin h4">{{ product.title }}</h2>
+                    <p class="offer type-sml" itemscope itemtype="http://schema.org/Offer">
                         <span class="price" itemprop="price">&pound;100.00</span>
                     </p>
                 </div>

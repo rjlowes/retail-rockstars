@@ -20,19 +20,19 @@
 .search__input {
     background: none;
     border: 1px solid $border-color;
-    color: #fff;
-    font-size: 11px;        // TODO update this
+    font-family: $heading-font-family;
+    font-size: 11px;
     line-height: 30px;
-    width: 100%;    // TODO use std form styles
+    width: 216px;
 }
 
 .search__btn {
+    background-color: $btn-default-colour;
     border: none;
     float: right;
-    box-shadow: inset 0 1px rgba(255,255,142,.2),0 0 3px rgba(0,0,0,.25);
     color: #fff;
-    height: 30px;
-    width: 30px;
+    height: 34px;
+    width: 34px;
     font-size: 22px;
 }
 

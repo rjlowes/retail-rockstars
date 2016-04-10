@@ -1,86 +1,76 @@
-<!-- Need title, firstname, lastname -->
-
-<!-- Customer name group, any reuse here? -->
 <div class="form-group">
-    <div class="col-xs-3">
-        <label for="title">Title</label>
-        <select name="title" id="title" ng-init="registration.title = registration.title || SALUTATIONS[0]" data-ng-model="registration.title" class="form-control" aria-required="true" aria-label="title" required>
-            <option ng-repeat="salutation in salutations" value="{{ salutation }}">{{ salutation }}</option>
-        </select>
-    </div>
-    <div class="col-xs-4">
-        <label for="firstname">First name</label>
-        <input aria-required="true" aria-label="First name" type="text" name="firstname" id="firstname" data-ng-model="registration.firstname" class="form-control" placeholder="First name" ng-minlength="2" ng-maxlength="30" required />
-    </div>
-    <div class="col-xs-5">
-        <label for="lastname">Last name</label>
-        <input aria-required="true" aria-label="Lastname" type="text" name="lastname" id="lastname" data-ng-model="registration.lastname" class="form-control" placeholder="Last name" ng-minlength="2" ng-maxlength="30" required />
-    </div>
-    <div class="form-help" ng-messages="registerForm.title.$error" role="alert" ng-if="registerForm.title.$touched">
+    <label for="title">Title</label>
+    <!--
+    <select name="title" id="title" ng-init="registration.title = registration.title || SALUTATIONS[0]" data-ng-model="address.title" class="form-control" aria-required="true" aria-label="title" required>
+        <option ng-repeat="salutation in salutations" value="{{ salutation }}">{{ salutation }}</option>
+    </select>
+    -->
+    <select name="title" id="title" ng-options="salutation as salutation for salutation in salutations" ng-model="address.title" class="form-control" aria-required="true" aria-label="title" required>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="firstname">First name</label>
+    <input aria-required="true" aria-label="First name" type="text" name="firstname" id="firstname" data-ng-model="address.firstname" class="form-control" placeholder="First name" ng-minlength="2" ng-maxlength="30" required />
+</div>
+
+<div class="form-group">
+    <label for="lastname">Last name</label>
+    <input aria-required="true" aria-label="Lastname" type="text" name="lastname" id="lastname" data-ng-model="address.lastname" class="form-control" placeholder="Last name" ng-minlength="2" ng-maxlength="30" required />
+</div>
+
+<div class="form-group">
+    <div class="form-help" ng-messages="address.title.$error" role="alert" ng-if="address.title.$touched">
         <label for="title" class="error" ng-message="required">Title required</label>
     </div>
-    <div class="form-help" ng-messages="registerForm.firstname.$error" ng-if="registerForm.firstname.$touched">
+    <div class="form-help" ng-messages="address.firstname.$error" ng-if="address.firstname.$touched">
         <label for="firstname" class="error" ng-message="minlength, maxlength, required">Firstname 2 to 30 characters</label>
     </div>
-    <div class="form-help" ng-messages="registerForm.lastname.$error" ng-if="registerForm.lastname.$touched">
+    <div class="form-help" ng-messages="address.lastname.$error" ng-if="address.lastname.$touched">
         <label for="lastname" class="error" ng-message="minlength, maxlength, required">Lastname 2 to 30 characters</label>
     </div>
 </div>
 
 <div class="form-group">
-    <div class="col-xs-6">
-        <label for="telephone">Telephone</label>
-        <input name="telephone" id="telephone" class="form-control" ng-model="addressFormData.telephone" />
-    </div>
-    <!--
-    <div class="col-xs-6">
-        <label for="label">Label</label>
-        <input name="label" id="label" class="form-control" ng-model="addressFormData.label" />
-    </div>-->
+    <label for="telephone">Telephone</label>
+    <input name="telephone" id="telephone" class="form-control" ng-model="address.telephone" />
+</div>
+
+<!--
+<div class="form-group">
+    <label for="label">Label</label>
+    <input name="label" id="label" class="form-control" ng-model="{{addressaddress}}.label" />
+</div>
+-->
+
+<div class="form-group">
+    <label for="address1">Address line 1</label>
+    <input name="address1" id="address1" class="form-control" ng-model="address.address1" />
 </div>
 
 <div class="form-group">
-    <div class="col-xs-6">
-        <label for="label">Label</label>
-        <input name="label" id="label" class="form-control" ng-model="{{addressFormData}}.label" />
-    </div>
-    <div class="col-xs-6">
-        <label for="address1">Address line 1</label>
-        <input name="address1" id="address1" class="form-control" ng-model="addressFormData.address1" />
-    </div>
+    <label for="address2">Address line 2</label>
+    <input name="address2" id="address2" class="form-control" ng-model="address.address2" />
 </div>
 
 <div class="form-group">
-    <div class="col-xs-6">
-        <label for="address2">Address line 2</label>
-        <input name="address2" id="address2" class="form-control" ng-model="addressFormData.address2" />
-    </div>
-    <div class="col-xs-6">
-        <label for="address2">Address line 2</label>
-        <input name="address2" id="address2" class="form-control" ng-model="addressFormData.address2" />
-    </div>
+    <label for="address3">Address line 3</label>
+    <input name="address3" id="address3" class="form-control" ng-model="address.address3" />
 </div>
 
 <div class="form-group">
-    <div class="col-xs-6">
-        <label for="address3">Address line 3</label>
-        <input name="address3" id="address3" class="form-control" ng-model="addressFormData.address3" />
-    </div>
-    <div class="col-xs-6">
-        <label for="townCity">Town/City</label>
-        <input name="townCity" id="townCity" class="form-control" ng-model="addressFormData.townCity" />
-    </div>
+    <label for="townCity">Town/City</label>
+    <input name="townCity" id="townCity" class="form-control" ng-model="address.townCity" />
 </div>
 
 <div class="form-group">
-    <div class="col-xs-6">
-        <label for="postcode">Postcode</label>
-        <input name="postcode" id="postcode" class="form-control" ng-model="addressFormData.postcode" />
-    </div>
-    <div class="col-xs-6">
-        <label for="country">Country</label>
-        <select name="country" ng-model="addressForm.country" class="form-control" disable>
-            <option value="UK">United Kingdom</option>
-        </select>
-    </div>
+    <label for="postcode">Postcode</label>
+    <input name="postcode" id="postcode" class="form-control" ng-model="address.postcode" />
+</div>
+
+<div class="form-group">
+    <label for="country">Country</label>
+    <select name="country" ng-model="addressForm.country" ng-options="county as country for country in ['United Kingdom']" class="form-control" disabled>
+        <!--<option value="UK">United Kingdom</option>-->
+    </select>
 </div>

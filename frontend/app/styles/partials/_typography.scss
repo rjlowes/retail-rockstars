@@ -1,4 +1,31 @@
 
+// TODO process the font for all browsers
+@font-face{ 
+    font-family: 'RalewayBold';
+    src: url('/fonts/Raleway-Bold.eot');
+    src: url('/fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Raleway-Bold.woff') format('woff'),
+         url('/fonts/Raleway-Bold.ttf') format('truetype'),
+         url('/fonts/Raleway-Bold.svg#webfont') format('svg');
+}
+@font-face{ 
+    font-family: 'RobotoBold';
+    src: url('/fonts/Roboto-Bold.eot');
+    src: url('/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Roboto-Bold.woff') format('woff'),
+         url('/fonts/Roboto-Bold.ttf') format('truetype'),
+         url('/fonts/Roboto-Bold.svg#webfont') format('svg');
+}
+@font-face{ 
+    font-family: 'RobotoReg';
+    src: url('/fonts/Roboto-Regular.eot');
+    src: url('/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Roboto-Regular.woff') format('woff'),
+         url('/fonts/Roboto-Regular.ttf') format('truetype'),
+         url('/fonts/Roboto-Regular.svg#webfont') format('svg');
+}
+
+
 html {
     font-size: 62.5%;
 }
@@ -11,6 +38,8 @@ body {
 h1, .h1 {
     color: $heading-colour;
     font-family: $heading-font-family;
+    font-weight: normal;
+    //font-family: 'RalewayBold';
     @include rem($heading1-font-size);    /* 32px */
     line-height: $heading1-line-height;   /* 48px */
     margin-bottom: #{$heading1-line-height}em;
@@ -19,6 +48,7 @@ h1, .h1 {
 h2, .h2 {
     color: $heading-colour;
     font-family: $heading-font-family;
+    font-weight: normal;
     @include rem($heading2-font-size);      /* 24px */
     line-height: $heading1-line-height;     /* 24px */
     margin-bottom: #{$heading1-line-height}em;
@@ -47,27 +77,27 @@ p, .p { // This one is broken
     margin-bottom: #{$paragraph-line-height}em;
 }
 
-label {
+label,
+.label {
     color: $label-colour;
     display: block;
     font-family: $heading-font-family;
-    font-weight: bold;
+    //font-weight: bold;
     text-transform: uppercase;
 }
 
 .type-lead {
     @include rem($type-lead-font-size);
-    font-weight: 600;
+    //font-weight: 400;
     line-height: $type-lead-line-height;
     margin-bottom: #{$type-lead-line-height}em;
 }
 
 .type-sml {
     @include rem($type-sm-font-size);
-    font-weight: 600;
+    //font-weight: 400;
     line-height: $type-sm-line-height;
-    margin-bottom: #{$type-sm-font-size/2}em;
-    margin-top: #{$type-sm-font-size/2}em;
+    margin-bottom: #{$type-sm-font-size}em;
 }
 
 .type-mark {
@@ -92,6 +122,15 @@ label {
 
 .dim-el {opacity: .8;}
 
+.strong {
+    color: #4d4d4d;
+    font-family: $body-font-family-bold;
+    font-weight: normal;
+}
+
+strong {@extend .strong;}
+em {@extends .strong;}
+
 
 a {
     color: $text-colour-link;
@@ -110,29 +149,24 @@ li {
 
 dl {
     overflow:hidden;
-    margin-bottom: 10px;        //modular scale
-    // TODO include clearfix()
 }
 
 dt, dd {
-    // @include span(1 of 2)
-    //@include span-columns(1 of 2);
+    @extend li;
 }
 
 dd {
-    //@include omega;
     text-align: right;
 }
 
 .dl-asymetric dt {
-    // @include span(2 of 3);
-    //@include span-columns(2 of 3);
+    float: left;
+    width: 66.666%;
 }
 
 .dl-asymetric dd {
-    // @include span(1 of 3);
-    // @include omega;
-    //@include span-columns(1 of 3);
+    float: left;
+    width: 33.333%;
 }
 
 // See http://stackoverflow.com/questions/12783419/hide-text-with-css-best-practice
@@ -154,15 +188,15 @@ dd {
 
 
 
-.quiet { font-color: $quiet-color; }
-.loud  { font-color: $loud-color; }
+//.quiet { font-color: $quiet-color; }
+//.loud  { font-color: $loud-color; }
 
-.italic { font-style: italic; }
-.bold   { font-weight: 700; @extend .loud; }
+//.italic { font-style: italic; }
+//.bold   { font-weight: 700; @extend .loud; }
 
-.block-margins { margin: 1em 0; }
+//.block-margins { margin: 1em 0; }
 
-.unordered-list { list-style-type: disc; }
-.ordered-list { list-style: decimal; }
+//.unordered-list { list-style-type: disc; }
+//.ordered-list { list-style: decimal; }
 
 
