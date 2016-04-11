@@ -38,7 +38,8 @@ gulp.task('libs', function() {
 		//'node_modules/gsap/src/uncompressed/TimelineLite.js', 
 		'app/scripts/plugins/greensock.js',
 		'app/scripts/plugins/layerslider.transitions.js', 
-		'app/scripts/plugins/layerslider.kreaturamedia.jquery.js'])
+		'app/scripts/plugins/layerslider.kreaturamedia.jquery.js',
+		'app/scripts/plugins/responsive.accordion.jquery.js'])
     .pipe(concat('libs.js'))
     //.pipe(uglify())
     .pipe(gulp.dest('.tmp/scripts'));

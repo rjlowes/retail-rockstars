@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:AuthCtrl
+ * @name yoApp.controller:FeedbackCtrl
  * @description
- * # AuthCtrl
- * Controller of the yoApp
+ * # FeedbackCtrl
+ * Controller to handle display of feedback messages
  */
 module.exports = function ($rootScope, $scope) {
 	$rootScope.$on('feedback', function (data) {
@@ -13,14 +13,3 @@ module.exports = function ($rootScope, $scope) {
         
     });
 };
-
-/*
-angular.module('yoApp')
-.controller('FeedbackCtrl', function ($rootScope, $scope) {
-
-    $rootScope.$on('feedback', function (data) {
-        // add and put a timer on the feedback messages
-        
-    });
-});
-*/

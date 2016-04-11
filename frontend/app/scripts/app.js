@@ -19,6 +19,7 @@ var jQuery = require('jquery'),
     toggleClassDirective = require('./directives/toggle-class.directive'),
     fieldsetCustomerDirective = require('./directives/fieldset-customer.directive'),
     fieldsetAddressDirective = require('./directives/fieldset-address.directive'),
+    responsiveAccordion = require('./directives/responsive-accordion'),
     csrfService = require('./services/csrf.service'),
     scrollFactory = require('./services/scroll.factory'),
     addressService = require('./services/address.service'),
@@ -50,6 +51,7 @@ angular
         .directive('toggleClass', toggleClassDirective)
         .directive('fieldsetCustomer', fieldsetCustomerDirective)
         .directive('fieldsetAddress', fieldsetAddressDirective)
+        .directive('responsiveAccordion', responsiveAccordion)
         .factory('csrfService', csrfService)
         .factory('scrollFactory', scrollFactory)
         .service('addressService', addressService)
