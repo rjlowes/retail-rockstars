@@ -27,7 +27,9 @@
 
     <header data-ng-include="'views/layout/_header.html'" class="navbar" data-ng-controller="HeaderCtrl"></header>
 
+    <!--
     <ng-include src="'views/layout/_feedback.html'"></ng-include>
+    -->
 
     <main>
         <ui-view>
@@ -35,7 +37,7 @@
         </ui-view>
     </main>
 
-    <footer data-ng-include="'views/layout/_footer.html'" class="footer"></footer>
+    <div data-ng-include="'views/layout/_footer.html'" class="footer"></div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="/scripts/libs.js"></script>

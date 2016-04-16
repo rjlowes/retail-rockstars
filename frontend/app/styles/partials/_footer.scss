@@ -2,7 +2,15 @@
 .footer {
     border-top: 1px solid $border-color;
     margin-top: 10px;
-    min-height: 150px;
+}
+
+.footer__form {
+	clear: both;
+	padding-top: 50px;
+
+	@include media-breakpoint-up(md) {
+		padding-top: 0;
+	}
 }
 
 
@@ -17,10 +25,42 @@
 
 .r-acc__sec-trig {
     cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+    	margin-bottom: 1em;
+    	&::after {
+    		content: '\ea0a';
+    		color: $colour-primary;
+    		font-family: 'iconfont';
+    		font-size: 10px;
+		    position: absolute;
+		    top: 6px;
+		    right: 10px;
+    	}
+    }
+
+	@include media-breakpoint-down(sm) {
+	    &--open {
+	    	color: $colour-primary;
+	    	&::after {
+	    		content: '\ea09';
+	    	}
+	    }
+	}
+
+    @include media-breakpoint-up(md) {
+    	@extend .p;
+		@extend .type-lead;
+		margin-bottom: 10px;
+    }
 }
 
 .r-acc__sec-targ {
     display: none;
+    margin-bottom: 50px;
 
     @include media-breakpoint-up(md) {
         display: block !important;

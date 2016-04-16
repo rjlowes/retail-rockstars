@@ -7,7 +7,8 @@
  * # CategoryCtrl
  * Controller of the yoApp
  */
-module.exports = function ($scope, $routeParams, $http, urlService) {
+module.exports = function ($scope, $stateParams, $http, urlService) {
+    console.log('state param', $stateParams.categoryId);
     function calculatePages(data) {
         // Change zero indexing
         var current = data.number + 1,
@@ -42,20 +43,20 @@ module.exports = function ($scope, $routeParams, $http, urlService) {
     }
 
     // Get the category info
-    $http.get(urlService.getCategoryUrl($routeParams.categoryId))
+    $http.get(urlService.getCategoryUrl($stateParams.categoryId))
          .success(function (data) {
             $scope.category = data;
          });
 
     // TODO add a filter, sort, paging feature
-    fetchProducts($routeParams.categoryId);
+    fetchProducts($stateParams.categoryId);
 
     $scope.range = function (n) {
         return new Array(n);
     };
 
     $scope.selectPage = function (pageNumber) {
-        fetchProducts($routeParams.categoryId, pageNumber);
+        fetchProducts($stateParams.categoryId, pageNumber);
     };
 };
 

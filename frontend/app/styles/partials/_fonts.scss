@@ -6,6 +6,17 @@
     font-style: normal;
 }
 
+%icon-style {
+    display: inline-block;
+    font: normal normal normal 14px/1 iconfont;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    vertical-align: middle;
+}
+
 [class^="icon-"] {
 	display: inline-block;
 	font: normal normal normal 14px/1 iconfont;
@@ -47,6 +58,14 @@
 
 .icon-magnify:before {
     content: "\ea08";
+}
+
+.icon-minus:before {
+    content: "\ea09";
+}
+
+.icon-plus:before {
+    content: "\ea0a";
 }
 
 .icon-size-md {

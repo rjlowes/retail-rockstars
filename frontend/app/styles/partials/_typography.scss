@@ -56,7 +56,7 @@ h2, .h2 {
 
 h3, .h3 {
     font-family: $heading-font-family;
-    font-style: italic;
+    //font-style: italic;
     @include rem($heading3-font-size);      /* 21px */
     line-height: $heading3-line-height;     /* 24px */
     margin-bottom: #{$heading3-line-height}em;
@@ -73,6 +73,7 @@ h4, .h4 {
 
 p, .p { // This one is broken
     @include rem($paragraph-font-size);
+    font-family: $body-font-family;
     line-height: $paragraph-line-height;  //base line 24px
     margin-bottom: #{$paragraph-line-height}em;
 }
@@ -84,6 +85,15 @@ label,
     font-family: $heading-font-family;
     //font-weight: bold;
     text-transform: uppercase;
+}
+
+legend,
+.legend {
+    color: $colour-primary;
+    @include rem($type-legend-font-size);
+    font-family: $heading-font-family;
+    line-height: $type-legend-line-height;
+    margin-bottom: 1em;
 }
 
 .type-lead {
@@ -175,6 +185,15 @@ dd {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.sr-hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
 }
 
 // Think these are repeated already in utils

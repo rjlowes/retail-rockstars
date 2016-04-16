@@ -1,6 +1,16 @@
 
+<div>
+	<!-- put this in css and use responsive image srcset equivalent there
+	<img src="/images/content/home/main-banner-544x470.jpg" class="img-responsive" /> -->
+	<picture>
+		<source media="(min-width:992px)" srcset="/images/content/home/main-banner-1280x470.jpg" />
+		<source media="(min-width:544px)" srcset="/images/content/home/main-banner-768x470.jpg" />
+		<img src="/images/content/home/main-banner-544x470.jpg" class="img-responsive" />
+	</picture>
+</div>
+
+<!--
 <div id="slider-wrapper" ng-init="startGallery()">
-	<!--<div id="layerslider" style="width:1280px;height:720px;max-width: 1280px;">-->
 	<div id="layerslider" style="height:470px; width:100%;" class="ls-fullwidth">
 		<div class="ls-slide" data-ls="slidedelay:8000;transition2d:1;">
 			
@@ -73,6 +83,7 @@
 		</div>
 	</div>
 </div>
+-->
 
 
 <section style="padding: 80px 0;" class="spacer--vertical-reg container" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
@@ -115,6 +126,7 @@
 		</div>
 	</div>
 </div>
+
 
 <section style="background:#F9F9F9; padding: 80px 0;" class="spacer--vertical-reg">
 	<div class="container">

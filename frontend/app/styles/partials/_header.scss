@@ -3,7 +3,8 @@
     @include clearfix;
     background: #fff;
     border-bottom: 1px solid $border-color;
-    height: 50px;
+    // height: 50px;
+    height: 65px;
     padding: 10px 0;
     margin-bottom: 10px;
     position: relative;
@@ -20,6 +21,7 @@
 }
 
 .navbar__logo {
+    margin: 9px 0;
     overflow: hidden;
 
     & .logo { // move this!
@@ -77,12 +79,10 @@
 .navbar__basket {
     float: right;
     margin: 0 20px;
+    padding: 9px 0;
     position: relative;
     width: auto;
 }
-
-
-
 
 
 

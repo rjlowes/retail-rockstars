@@ -15,6 +15,7 @@
 			sectionSelector: 	'.r-acc__sec',
 			triggerSelector: 	'.r-acc__sec-trig',
 			targetSelector: 	'.r-acc__sec-targ',
+			triggerOpenClass: 'r-acc__sec-trig--open',
 			activeMediaQuery: '(max-width: 768px)'
 		};
 
@@ -37,6 +38,7 @@
 
 			trigger.click(function () {
 				if (window.matchMedia(_this.options.activeMediaQuery).matches) {
+					trigger.toggleClass(_this.options.triggerOpenClass);
 					target.slideToggle('fast');
 				}
 			});

@@ -6,11 +6,7 @@ fieldset {
 
 }
 
-legend {
-    color: #46a5df;
-    //@include rem($type-sm-font-size);
-    @extend .type-sml;
-}
+
 .legend-center {
     margin: 0 auto 1em auto;
 }
@@ -49,10 +45,17 @@ label,
         width: 50%;
     }
 
+    &--ext {
+        font-family: $heading-font-family;
+        line-height: 3.462;
+        padding-right: 54px;
+    }
+
     &:active,
     &:focus {
-        border-color: #009df5 !important;
-        box-shadow: 0 0 2px rgba(0, 157, 245, 0.9);
+        border-color: $colour-primary !important;
+        //border-width: 2px;
+        //box-shadow: 0 0 2px rgba(0, 157, 245, 0.9);
         outline: none;
     }
 }
@@ -141,6 +144,27 @@ label.error {
     display: block;
     padding: 0 5px;
     margin:0;
+}
+
+.form-compact {
+    
+}
+
+.form-compact__wrap {
+    position: relative;
+}
+
+.form-compact__btn {
+    background: none;
+    border-radius: 30px;
+    border: 1px solid $colour-primary;
+    color: $colour-primary;
+    font-size: 18px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    height: 34px;
+    width: 34px;
 }
 
 /*.form-help {
