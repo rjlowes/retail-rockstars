@@ -1,0 +1,22 @@
+.slideshow {
+	//max-height: 470px;
+	width: 100%;
+}
+
+.slideshow__slide {
+	height: 470px;
+	width: 100%;
+}
+
+.slideshow__slide-bg {
+	width: 100%;
+	transition: all 0.5s ;
+	
+	.slideshow__slide--pre {
+
+	}
+
+	.slideshow__slide--post {
+		
+	}
+}
