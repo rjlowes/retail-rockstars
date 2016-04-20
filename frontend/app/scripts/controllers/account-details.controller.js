@@ -8,17 +8,36 @@
  * Controller of the yoApp
  */
 module.exports = function ($scope, $http, SALUTATIONS) {
+
     $scope.salutations = SALUTATIONS;
 
-    $http.get('/api/customer/details').success(function (data) {
-        console.log(data);
-        $scope.customer = data;
-    });
+    $scope.findCustomer = function () {
+        $http.get('/api/customer/details').success(function (data) {
+            $scope.customerFormData = data;
+        });
+    };
 
+    $scope.updateCustomer = function () {
+        var customer = angular.copy($scope.customerFormData);
+        
+        $http.put('/api/customer/details', customer).success(function (data) {
+            console.log('success, send message to notifier');
+        });
+    };
 
-    // $scope.updateCustomer = function () {
+    $scope.initEmailForm = function () {
+        $scope.emailFormData = {};
+    };
 
-    // };
+    $scope.updateEmail = function () {
+        var email = angular.copy($scope.emailFormData);
+
+        $http.put('/api/customer/email', email).success(function (data) {
+            console.log('success, send message to notifier');
+        });
+    };
+    
+
 
     // $scope.updateEmail = function () {
 

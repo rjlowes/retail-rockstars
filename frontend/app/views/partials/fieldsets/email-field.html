@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label for="email">Email</label>
+    <input aria-label="Email" type="email" name="email" id="email" data-ng-model="formData.email" class="form-control" placeholder="Email" required />
+    <div class="form-help" ng-messages="form.email.$error" role="alert" ng-if="form.email.$touched">
+        <label for="email" class="error" ng-message="required">Email required</label>
+    </div>
+</div>

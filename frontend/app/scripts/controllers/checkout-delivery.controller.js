@@ -7,9 +7,11 @@
  */
 module.exports = function ($scope, $state, addressService, basketService, SALUTATIONS) {
 
+    $scope.salutations = SALUTATIONS;
     $scope.selectAddressData = {};
     $scope.addressFormData = {country: 'UK'};
-    $scope.salutations = SALUTATIONS;
+    $scope.addressFormData = {}
+    $scope.addressFormData.title = $scope.salutations[0];
 
     // TODO keep customer data completely synced so we don't need these lookups
     addressService.findAll().success(function (data) {
@@ -22,7 +24,6 @@ module.exports = function ($scope, $state, addressService, basketService, SALUTA
     });
     
     $scope.selectDeliveryAddress = function () {
-        
         // TODO validate
         var addressId = $scope.selectAddressData.selectedAddress.id;
 

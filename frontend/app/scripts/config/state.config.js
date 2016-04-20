@@ -48,10 +48,25 @@ module.exports = function ($stateProvider, $urlRouterProvider, $httpProvider) {
             templateUrl: 'views/account/dashboard.html',
             controller: 'AccountDetailsCtrl'
         })
+        // .state('account.details', {
+        //     url: '/secure/account/customer',
+        //     templateUrl: 'views/account/customer/index.html',
+        //     controller: 'CustomerDetailsCtrl'
+        // })
         .state('account.details', {
             url: '/secure/account/customer',
-            templateUrl: 'views/account/customer/index.html',
-            controller: 'CustomerDetailsCtrl'
+            templateUrl: 'views/account/editCustomer.html',
+            controller: 'AccountDetailsCtrl'
+        })
+        .state('account.email', {
+            url: '/secure/account/email',
+            templateUrl: 'views/account/editEmail.html',
+            controller: 'AccountDetailsCtrl'
+        })
+        .state('account.password', {
+            url: '/secure/account/password',
+            templateUrl: 'views/account/editPassword.html',
+            controller: 'AccountDetailsCtrl'
         })
         .state('account.orders', {
             url: '/secure/account/orders',

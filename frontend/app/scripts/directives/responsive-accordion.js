@@ -1,5 +1,7 @@
 'use strict';
 
+require('../plugins/responsive.accordion.jquery');
+
 /**
  * @ngdoc function
  * @name yoApp.directive:responsiveAccordion

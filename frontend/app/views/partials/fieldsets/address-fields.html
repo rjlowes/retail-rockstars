@@ -2,6 +2,7 @@
     <label for="address1">Address line 1</label>
     <input aria-label="Address line 1" aria-required="true" name="address1" id="address1" class="form-control" ng-model="formData.address1" placeholder="Address line 1" required />
 </div>
+
 <div class="form-group">
     <label for="address">Address line 2</label>
     <input aria-label="Address line 2" name="address2" id="address2" class="form-control" ng-model="formData.address2" placeholder="Address line 2" />
@@ -18,6 +19,12 @@
 </div>
 
 <div class="form-group">
+    <label for="postcode">Postcode</label>
+    <input aria-label="Postcode" aria-require="true" name="postcode" id="postcode" class="form-control" ng-model="formData.postcode" placeholder="Postcode" required />
+</div>
+
+<!--
+<div class="form-group">
     <div class="col-xs-12">
         <input type="tel" aria-label="Telephone number" aria-require="true" name="telephone" id="telephone" class="form-control" ng-model="formData.telephone" placeholder="Tel no." required />
     </div>
@@ -25,11 +32,11 @@
         <input aria-label="Postcode" aria-require="true" name="postcode" id="postcode" class="form-control" ng-model="formData.postcode" placeholder="Postcode" required />
     </div>
 </div>
+-->
 
 <div class="form-group">
-    <div class="col-xs-24">
-        <select aria-label="Country" aria-required="true" name="country" ng-model="formData.country" class="form-control" disable required>
-            <option value="UK">United Kingdom</option>
-        </select>
-    </div>
+    <label for="country">Country</label>
+    <select aria-label="Country" aria-required="true" name="country" ng-model="formData.country" class="form-control" disable required>
+        <option value="UK" selected="selected">United Kingdom</option>
+    </select>
 </div>

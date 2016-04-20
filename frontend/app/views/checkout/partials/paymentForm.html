@@ -1,63 +1,44 @@
-<div class="col-md-14 col-md-push-4">
-    <div class="page-header">
-        <h1 class="rm-margin-bottom"><span class="icon-secure-checkout icon-size-lg"></span> Secure Checkout</h1>
-    </div>
+<form name="paymentForm" ng-submit="makePayment()" novalidate>
+    <fieldset>
+        <legend>Card details</legend>
 
-    <div class="col-xs-20 col-md-12">
-        <form name="paymentForm" ng-submit="makePayment()" novalidate>
-            <div class="row">
-                <fieldset>
-                    <legend>Card details</legend>
-
-                    <div class="form-group">
-                        <label for="cardName">Cardholder name</label>
-                        <input aria-label="Name on card" name="cardName" id="cardName" class="form-control" ng-model="formData.cardName" placeholder="As it appears on the card" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cardNumber">Card no</label>
-                        <input aria-label="Card Number" name="cardNumber" id="cardNumber" class="form-control" ng-model="formData.cardNumber" placeholder="e.g. xxxx-xxxx-xxxx-xxx" />
-                    </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input aria-label="CVV" name="cvv" id="cvv" class="form-control" ng-model="formData.csv" placeholder="CVV" />
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-xs-12">
-                            <label for="cvv">Expiry month</label>
-                            <select id="month" ng-model="formData.month" class="form-control" ng-options="month as month for month in months">
-                            </select>
-                        </div>
-                        <div class="col-xs-12">
-                            <label for="cvv">Expiry year</label>
-                            <select id="year" ng-model="formData.year" class="form-control" ng-options="year as year for year in years">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sameAsBilling">
-                            <input aria-label="Do you agree to the terms and conditions?" type="checkbox" name="terms" id="terms" ng-model="formData.terms" class="form-checkbox" />
-                            Do you agree to Terms &amp; Conditions
-                        </label>                        
-                    </div> 
-
-                </fieldset>
-                
-                <div class="form-group">
-                    <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to billing</button>
-                </div>
-            </div>
-        </form>
-
-    </div>
-    <div class="col-xs-20 col-xs-push-2 col-md-12">
-        <div class="">
-        <h2>Your Best Fit</h2>
-        <p>If your order doesn’t fit the way it should, let us know right away.</p>
-        <h2>Free Global Shipping</h2>
-        <p>On orders over $150.</p>
+        <div class="form-group">
+            <label for="cardName">Cardholder name</label>
+            <input aria-label="Name on card" name="cardName" id="cardName" class="form-control" ng-model="formData.cardName" placeholder="As it appears on the card" />
         </div>
+
+        <div class="form-group">
+            <label for="cardNumber">Card no</label>
+            <input aria-label="Card Number" name="cardNumber" id="cardNumber" class="form-control" ng-model="formData.cardNumber" placeholder="e.g. xxxx-xxxx-xxxx-xxx" />
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input aria-label="CVV" name="cvv" id="cvv" class="form-control" ng-model="formData.csv" placeholder="CVV" />
+        </div>
+
+        <div class="form-group row">
+            <div class="col-xs-12">
+                <label for="cvv">Expiry month</label>
+                <select id="month" ng-model="formData.month" class="form-control" ng-options="month as month for month in months">
+                </select>
+            </div>
+            <div class="col-xs-12">
+                <label for="cvv">Expiry year</label>
+                <select id="year" ng-model="formData.year" class="form-control" ng-options="year as year for year in years">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="sameAsBilling">
+                <input aria-label="Do you agree to the terms and conditions?" type="checkbox" name="terms" id="terms" ng-model="formData.terms" class="form-checkbox" />
+                Do you agree to Terms &amp; Conditions
+            </label>                        
+        </div> 
+
+    </fieldset>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to billing</button>
     </div>
-</div>
+</form>

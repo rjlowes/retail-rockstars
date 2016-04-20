@@ -18,10 +18,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rockstars.controller.dto.AjaxResponse;
+import com.rockstars.controller.dto.AjaxValidationResponse;
 import com.rockstars.exception.ValidationException;
 import com.rockstars.form.customer.CustomerDetailsForm;
 import com.rockstars.form.customer.CustomerRegistrationForm;
+import com.rockstars.form.customer.EmailForm;
 import com.rockstars.form.customer.NameForm;
+import com.rockstars.model.Address;
 import com.rockstars.model.Customer;
 import com.rockstars.service.CustomerService;
 
@@ -35,16 +38,6 @@ public class CustomerController {
     public Customer getCustomer() {
         return customerService.findAuthenticatedCustomer();
     }
-    
-//    @RequestMapping(value="/api/customer/firstname", method=RequestMethod.PUT)
-//    public void updateCustomerFirstname(HttpServletRequest request,
-//            @RequestBody @Valid NameForm form,
-//            BindingResult result) {
-//        
-//        if(result.hasErrors()) {
-//            // How to handle errors
-//        }
-//    }
     
     @RequestMapping(value="/api/customer/details", method=RequestMethod.PUT)
     @ResponseStatus(value=HttpStatus.OK)
@@ -75,6 +68,20 @@ public class CustomerController {
         response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         
         return null;
+    }
+    
+    @RequestMapping(value="/api/customer/email", method=RequestMethod.PUT)
+    public AjaxResponse<Boolean> updateEmail(Principal principal,
+            @RequestBody @Valid EmailForm emailForm, 
+            BindingResult result) throws ValidationException {
+        
+        if(result.hasErrors()) {
+            AjaxValidationResponse ajaxResponse = new AjaxValidationResponse(result.getFieldErrors());
+            throw new ValidationException(ajaxResponse);
+        } else {
+            customerService.updateEmail(emailForm.getEmail(), principal);
+            return new AjaxResponse<Boolean>(Boolean.TRUE);
+        }
     }
     
     @RequestMapping(value="/api/customer/password", method=RequestMethod.PUT)

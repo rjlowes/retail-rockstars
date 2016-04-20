@@ -1,8 +1,10 @@
 'use strict';
 
+//var jQuery = require('jquery');
+window.jQuery = window.$ = require('jquery');
 
-var jQuery = require('jquery'),
-    angular = require('angular'),
+//var jQuery = require('jquery'),
+var angular = require('angular'),
     ngAnimate = require('angular-animate'),
     ngAria = require('angular-aria'),
     ngCookies = require('angular-cookies'),
@@ -19,6 +21,7 @@ var jQuery = require('jquery'),
     toggleClassDirective = require('./directives/toggle-class.directive'),
     fieldsetCustomerDirective = require('./directives/fieldset-customer.directive'),
     fieldsetAddressDirective = require('./directives/fieldset-address.directive'),
+    fieldsetEmailDirective = require('./directives/fieldset-email.directive'),
     responsiveAccordion = require('./directives/responsive-accordion'),
     csrfService = require('./services/csrf.service'),
     scrollFactory = require('./services/scroll.factory'),
@@ -52,6 +55,7 @@ angular
         .directive('fieldsetCustomer', fieldsetCustomerDirective)
         .directive('fieldsetAddress', fieldsetAddressDirective)
         .directive('responsiveAccordion', responsiveAccordion)
+        .directive('fieldsetEmail', fieldsetEmailDirective)
         .factory('csrfService', csrfService)
         .factory('scrollFactory', scrollFactory)
         .service('addressService', addressService)

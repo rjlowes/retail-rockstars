@@ -16,6 +16,7 @@ public interface CustomerService {
     
     public void updateCustomer(CustomerDetailsForm customer, Principal principal);
     
+    public void updateEmail(String email, Principal principal);
     public void updateFirstname(String firstname, Principal principal);
     public void deleteCustomer(Customer customer);
     

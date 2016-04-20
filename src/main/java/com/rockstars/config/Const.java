@@ -10,4 +10,6 @@ public interface Const {
     int TEL_MIN = 8;
     
     int PASSWORD_MIN = 8;
+    
+    String REGEX_EMAIL = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
 }

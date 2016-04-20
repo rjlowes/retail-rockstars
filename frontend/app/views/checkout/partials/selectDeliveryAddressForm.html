@@ -11,7 +11,7 @@
                 <option ng-repeat="address in addresses" value="{{ address.id }}">{{ address.fullname }}, {{ address.address1 }}</option>
             </select>
             -->
-
+            <label for="customerAddresses">Select address</label>
             <select id="customerAddresses"class="form-control" ng-model="selectAddressData.selectedAddress"
                 ng-options="address.id as (address.fullname + ', ' + address.address1) for address in addresses track by address.id">
             </select>

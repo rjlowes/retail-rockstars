@@ -1,8 +1,8 @@
 <form name="addressForm" ng-submit="createDeliveryAddress()" novalidate>
-    <div class="row">
+    <div class="rowx">
         <fieldset>
             <legend>Or create a new address</legend>
-            <fieldset-customer form="addressForm" form-data="addressFormData"></fieldset-customer>
+            <fieldset-customer form="addressForm" form-data="addressFormData" salutations="salutations"></fieldset-customer>
             <fieldset-address form="addressForm" form-data="addressFormData"></fieldset-address>
             <!-- DRY this up
             <div class="col-xs-9">
@@ -10,7 +10,7 @@
                 <label for="sameAsBilling">Same as billing address</label>
             </div> -->
         </fieldset>
-        <div class="col-xs-24">
+        <div class="form-group">
             <button type="submit" class="btn btn--block" ng-disabled="addressForm.$invalid">Save &amp; go to billing</button>
         </div>
     </div>

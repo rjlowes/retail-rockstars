@@ -10,7 +10,7 @@
 }(function($, window, document, undefined) {
 
 	// Defaults
-	var pluginName = 'responsiveAccordion',
+	var pluginName = 'slideshow',
 		defaults = {
 			sectionSelector: 	'.r-acc__sec',
 			triggerSelector: 	'.r-acc__sec-trig',
@@ -32,17 +32,17 @@
 	Plugin.prototype.init = function () {
 		var _this = this;
 
-		$(this.element).find(this.options.sectionSelector).each(function () {
-			var trigger = $(this).find(_this.options.triggerSelector),
-				target = $(this).find(_this.options.targetSelector);
+		// $(this.element).find(this.options.sectionSelector).each(function () {
+		// 	var trigger = $(this).find(_this.options.triggerSelector),
+		// 		target = $(this).find(_this.options.targetSelector);
 
-			trigger.click(function () {
-				if (window.matchMedia(_this.options.activeMediaQuery).matches) {
-					trigger.toggleClass(_this.options.triggerOpenClass);
-					target.slideToggle('fast');
-				}
-			});
-		});
+		// 	trigger.click(function () {
+		// 		if (window.matchMedia(_this.options.activeMediaQuery).matches) {
+		// 			trigger.toggleClass(_this.options.triggerOpenClass);
+		// 			target.slideToggle('fast');
+		// 		}
+		// 	});
+		// });
 	};
 
 	// Lightweight plugin wrapper, which protects against multiple instantiations.
