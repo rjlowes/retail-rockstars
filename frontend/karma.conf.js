@@ -2,6 +2,7 @@
 // Generated on Tue Apr 12 2016 11:11:29 GMT+0100 (BST)
 
 module.exports = function(config) {
+    console.log('CONGIFURING KARMA');
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)

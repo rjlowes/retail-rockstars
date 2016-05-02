@@ -1,6 +1,5 @@
 package com.rockstars.service;
 
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +8,7 @@ import com.rockstars.exception.ServiceException;
 import com.rockstars.model.Address;
 import com.rockstars.model.Basket;
 import com.rockstars.model.BasketItem;
+import com.rockstars.model.Product;
 import com.rockstars.model.Variant;
 
 @Service
@@ -18,7 +18,7 @@ public class BasketServiceImpl implements BasketService {
     private CustomerSession customerSession;
     
     @Autowired
-    private VariantService variantService;
+    private CatalogueService catalogueService;
     
     @Autowired
     private AddressService addressService;
@@ -31,7 +31,7 @@ public class BasketServiceImpl implements BasketService {
     @Override
     public void add(String sku, Integer qty) throws ServiceException {
         // Retreive the sku
-        Variant variant = variantService.getVariant(sku);
+        Variant variant = catalogueService.getVariant(sku);
         
         if (variant == null) {
             throw new ServiceException("Unable to find product for sku + " + sku);
@@ -39,7 +39,10 @@ public class BasketServiceImpl implements BasketService {
         
         // add to basket
         BasketItem newItem = new BasketItem();
-        newItem.setProductVariant(variant);
+        Product p = variant.getProduct();
+        p.setVariants(null);
+        newItem.setProduct(p);
+        newItem.setVariant(variant);
         newItem.setQuantity(qty);
         
         customerSession.getBasket().addBasketItem(newItem);

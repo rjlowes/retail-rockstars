@@ -2,13 +2,42 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:CategoryCtrl
+ * @name rockstars.controller:CategoryCtrl
  * @description
  * # CategoryCtrl
- * Controller of the yoApp
+ * Controller of the rockstars
  */
-module.exports = function ($scope, $stateParams, $http, urlService) {
-    console.log('state param', $stateParams.categoryId);
+var CategoryCtrl = function ($scope, $stateParams, $http, catalogueService) {
+    
+    var categoryId = $stateParams.categoryId;
+    // TODO add a filter, sort, paging feature
+    findProducts(categoryId);
+
+
+    $scope.range = function (n) {
+        return new Array(n);
+    };
+
+    $scope.selectPage = function (pageNumber) {
+        findProducts(categoryId, pageNumber);
+    };
+
+
+    function findProducts(categoryId, pageNumber) {
+        catalogueService.findCategoryProducts(categoryId, pageNumber).then(function (products) {
+            $scope.pagingData = products;
+            $scope.calculatedPages = calculatePages(products);
+        }, function () {
+            // TODO add error message to feedback notifier
+        });
+    }
+
+    function findCategory(categoryId) {
+        catalogueService.findCategory(categoryId).then(function (category) {
+            $scope.category = category;
+        });
+    }
+
     function calculatePages(data) {
         // Change zero indexing
         var current = data.number + 1,
@@ -24,94 +53,6 @@ module.exports = function ($scope, $stateParams, $http, urlService) {
             total: total
         };
     }
-
-    // TODO create a catalogueService
-    function fetchProducts(categoryId, pageNumber) {
-        var url = urlService.getProductListUrl(categoryId);
-        
-        if (pageNumber !== undefined) {
-            url += '?pageNumber=' + pageNumber;
-        }
-
-        $http.get(url)
-             .success(function (data) {
-                // TODO expose only product data
-                $scope.pagingData = data;
-                $scope.calculatedPages = calculatePages(data);
-             });
-            // TODO add error 
-    }
-
-    // Get the category info
-    $http.get(urlService.getCategoryUrl($stateParams.categoryId))
-         .success(function (data) {
-            $scope.category = data;
-         });
-
-    // TODO add a filter, sort, paging feature
-    fetchProducts($stateParams.categoryId);
-
-    $scope.range = function (n) {
-        return new Array(n);
-    };
-
-    $scope.selectPage = function (pageNumber) {
-        fetchProducts($stateParams.categoryId, pageNumber);
-    };
 };
 
-/*
-angular.module('yoApp')
-    .controller('CategoryCtrl', function ($scope, $routeParams, $http, urlService) {
-
-        function calculatePages(data) {
-            // Change zero indexing
-            var current = data.number + 1,
-                prev = current - 1,
-                next = current + 1,
-                total = data.totalPages;
-            
-            return {
-                first: 1,
-                last: total,
-                prev: prev > 0 ? prev : 1,
-                next: next < total ? next : total,
-                total: total
-            };
-        }
-
-        // TODO create a catalogueService
-        function fetchProducts(categoryId, pageNumber) {
-            var url = urlService.getProductListUrl(categoryId);
-            
-            if (pageNumber !== undefined) {
-                url += '?pageNumber=' + pageNumber;
-            }
-
-            $http.get(url)
-                 .success(function (data) {
-                    // TODO expose only product data
-                    $scope.pagingData = data;
-                    $scope.calculatedPages = calculatePages(data);
-                 });
-                // TODO add error 
-        }
-
-        // Get the category info
-        $http.get(urlService.getCategoryUrl($routeParams.categoryId))
-             .success(function (data) {
-                $scope.category = data;
-             });
-
-        // TODO add a filter, sort, paging feature
-        fetchProducts($routeParams.categoryId);
-
-        $scope.range = function (n) {
-            return new Array(n);
-        };
-
-        $scope.selectPage = function (pageNumber) {
-            fetchProducts($routeParams.categoryId, pageNumber);
-        };
-    });
-*/
+module.exports = CategoryCtrl;

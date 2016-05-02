@@ -17,8 +17,8 @@ module.exports = function ($stateProvider, $urlRouterProvider, $httpProvider) {
         })
         .state('product', {
             url: '/product/:productId',
-            templateUrl: 'views/product/product.html',
-            controller: 'ProductCtrl'
+            templateUrl: 'views/catalogue/product.html',
+            controller: 'ProductCtrl as vm'
         })
         .state('auth', {
             url: '/auth',

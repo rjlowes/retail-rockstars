@@ -23,11 +23,13 @@ var angular = require('angular'),
     fieldsetAddressDirective = require('./directives/fieldset-address.directive'),
     fieldsetEmailDirective = require('./directives/fieldset-email.directive'),
     responsiveAccordion = require('./directives/responsive-accordion'),
+    wallopSliderDirective = require('./directives/wallop.directive'),
     csrfService = require('./services/csrf.service'),
+    catalogueService = require('./services/catalogue.service'),
     scrollFactory = require('./services/scroll.factory'),
     addressService = require('./services/address.service'),
     basketService = require('./services/basket.service'),
-    urlService = require('./services/url.service'),
+    // urlService = require('./services/url.service'),
     paymentService = require('./services/payment.service'),
     AccountDetailsController = require('./controllers/account-details.controller'),
     AddressBookController = require('./controllers/addressbook.controller'),
@@ -56,11 +58,13 @@ angular
         .directive('fieldsetAddress', fieldsetAddressDirective)
         .directive('responsiveAccordion', responsiveAccordion)
         .directive('fieldsetEmail', fieldsetEmailDirective)
+        .directive('wallopSlider', wallopSliderDirective)
         .factory('csrfService', csrfService)
         .factory('scrollFactory', scrollFactory)
+        .service('catalogueService', catalogueService)
         .service('addressService', addressService)
         .service('basketService', basketService)
-        .service('urlService', urlService)
+        //.service('urlService', urlService)
         .service('paymentService', paymentService)
         .controller('AccountDetailsCtrl', AccountDetailsController)
         .controller('AddressBookCtrl', AddressBookController)

@@ -6,18 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.rockstars.model.Product;
+import com.rockstars.model.Variant;
 import com.rockstars.repository.ProductRepository;
-
+import com.rockstars.repository.VariantRepository;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class CatalogueServiceImpl implements CatalogueService {
     
     @Autowired
     private ProductRepository productRepository;
+    
+    @Autowired
+    private VariantRepository variantRepository;
     
     @Override
     public Product findProduct(Long productId) {
@@ -39,5 +42,8 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAll(request);
     }
     
-    
+    @Override
+    public Variant getVariant(String sku) {
+        return variantRepository.findOne(sku);
+    }
 }

@@ -2,16 +2,21 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:BasketCtrl
+ * @name rockstars.controller:BasketCtrl
  * @description
  * # BasketCtrl
- * Controller of the yoApp
+ * Controller of the rockstars
  */
-module.exports = function ($rootScope, $scope, $http, urlService, basketService) {
-    var itemsPerPage = 2,
+var BasketCtrl = function ($rootScope, $scope, $http, basketService) {
+    var vm = this,
+        itemsPerPage = 2,
         basketItems;
 
-    $scope.selectedPage = 0;
+    
+    function init() {
+        vm.selectedPage = 0;
+        vm.getBasket();
+    }
 
     function getBasketItemCount (basketItems) {
         var basketItemCount = 0;
@@ -29,48 +34,48 @@ module.exports = function ($rootScope, $scope, $http, urlService, basketService)
             i;
 
         for (i = 0; i < noPages; i++) {
-            console.log('num', i);
             pages.push(i);
         }
 
         return pages;
     }
 
-    $scope.selectPage = function (pageNumber) {
+    vm.selectPage = function (pageNumber) {
         var len,
             basketItemsToShow;
         
         len = pageNumber === 0 ? itemsPerPage : pageNumber * itemsPerPage;
         basketItemsToShow = basketItems.slice(pageNumber, itemsPerPage);
-        $scope.basketItems = basketItemsToShow;
-        $scope.selectedPage = pageNumber;
+        vm.basketItems = basketItemsToShow;
+        vm.selectedPage = pageNumber;
     };
 
-    $scope.deleteItem = function (sku) {
-        basketService.deleteBasketItem(sku)
-            .success(function () {
-                $scope.updateBasket();
-            })
-            .error(function () {
-                // signature http, status, fnc, httpObj
-            });
+    vm.deleteItem = function (sku) {
+        basketService.deleteBasketItem(sku).then(function () {
+            vm.getBasket();
+        }, function () {
+            // TODO add error message to feedback
+        });
     };
 
-    $scope.updateBasket = function () {
-        basketService.getBasket()
-            .success(function (data) {
-                basketItems = data.payload.basketItems;
-                $scope.basketItems = basketItems;
-                $scope.basketItemCount = getBasketItemCount(basketItems);
-                $scope.pages = pageResults(basketItems);
-                $scope.selectPage(0);
-            })
-            .error(function () {
-                console.error('Oooops, something has gone wrong in the basket');
-            });
+    vm.getBasket = function () {
+        basketService.getBasket().then(function (data) {
+            basketItems = data.payload.basketItems;
+            vm.basketItems = basketItems;
+            vm.basketItemCount = getBasketItemCount(basketItems);
+            vm.pages = pageResults(basketItems);
+            vm.selectPage(0);
+        }, function () {
+            // TODO add error message to feedback
+        });
     };
 
     $rootScope.$on('basketUpdate', function () {
-        $scope.updateBasket();
+        vm.getBasket();
     });
+
+
+    init();
 };
+
+module.exports = BasketCtrl;

@@ -4,7 +4,7 @@ require('../plugins/responsive.accordion.jquery');
 
 /**
  * @ngdoc function
- * @name yoApp.directive:responsiveAccordion
+ * @name rockstars.directive:responsiveAccordion
  * @description
  * # responsiveAccordion
  * Directive wrapper for jQuery plugin

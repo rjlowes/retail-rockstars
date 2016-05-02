@@ -4,83 +4,38 @@ var Wallop = require('Wallop');
 
 /**
  * @ngdoc function
- * @name yoApp.controller:ProductCtrl
+ * @name rockstars.controller:ProductCtrl
  * @description
  * # ProductCtrl
- * Controller of the yoApp
+ * Controller of the rockstars
  */
-module.exports = function ($rootScope, $scope, $stateParams, $http, urlService) {
-    // TODO create a BasketService
+var ProductCtrl = function ($rootScope, $stateParams, catalogueService, basketService) {
 
-    var productId = $stateParams.productId;
-
-    $scope.form = {
-        qty: 1
-    };
+    var vm = this,
+        productId = $stateParams.productId;
     
-    // TODO move to service
-    $http.get(urlService.getProductUrl(productId))
-         .success(function (data) {
-            $scope.product = data;
-            if (data.variants.length > 0) {
-                //$scope.selectedSku = data.variants[0].sku;
-                $scope.form.sku = data.variants[0].sku;
+    vm.form = {qty: 1};
+
+    function init(productId) {
+        catalogueService.findProduct(productId).then(function (product) {
+            vm.product = product;
+
+            if (product.variants.length > 0) {
+                vm.form.sku = product.variants[0].sku;
             }
-         });
+        });
+    }
 
-    $scope.submitShoppingBagForm = function (isValid) {
-        // TODO validate form
-        // console.log('valid: ', isValid);
-
-        $http.put(urlService.getBasketUrl(), {sku: $scope.form.sku, quantity: $scope.form.qty})
-             .success(function () {
-                console.log('broadcasting');
-                $rootScope.$broadcast('basketUpdate');
-             });
+    vm.submitShoppingBagForm = function (isValid) {
+        var data = angular.copy(vm.form);
+        basketService.addBasketItem(data.sku, data.qty).then(function () {
+            $rootScope.$broadcast('basketUpdate');
+        }, function () {
+            // TODO add error to feedback messenger
+        });
     };
 
-    $scope.startMobileGallery = function () {
-        var gallery = document.querySelector('#wallop-mobile');
-        var slider = new Wallop(gallery, {carousel: false});
-    };
-
-    $scope.startDesktopGallery = function () {
-        var gallery = document.querySelector('#wallop-desktop');
-        var slider = new Wallop(gallery, {carousel: false});
-    };
+    init(productId);
 };
 
-/*
-angular.module('yoApp')
-    .controller('ProductCtrl', function ($rootScope, $scope, $stateParams, $http, urlService) {
-        
-        // TODO create a BasketService
-
-        var productId = $stateParams.productId;
-
-        $scope.form = {
-            qty: 1
-        };
-        
-        // TODO move to service
-        $http.get(urlService.getProductUrl(productId))
-             .success(function (data) {
-                $scope.product = data;
-                if (data.variants.length > 0) {
-                    //$scope.selectedSku = data.variants[0].sku;
-                    $scope.form.sku = data.variants[0].sku;
-                }
-             });
-
-        $scope.submitShoppingBagForm = function (isValid) {
-            // TODO validate form
-            // console.log('valid: ', isValid);
-
-            $http.put(urlService.getBasketUrl(), {sku: $scope.form.sku, quantity: $scope.form.qty})
-                 .success(function () {
-                    console.log('broadcasting');
-                    $rootScope.$broadcast('basketUpdate');
-                 });
-        };
-    });
-*/
+module.exports = ProductCtrl;

@@ -12,14 +12,16 @@
  * Using the $q deferred
  * @see http://weblog.west-wind.com/posts/2014/Oct/24/AngularJs-and-Promises-with-the-http-Service
  */
-module.exports = function ($http, $q) {
+var BasketService = function ($http) {
 
     this.getBasket = function () {
-        return $http.get('/api/basket');
+        return $http.get('/api/basket').then(function (response) {
+            return response.data;
+        });
     };
 
-    this.addBasketItem = function () {
-
+    this.addBasketItem = function (sku, qty) {
+        return $http.put('/api/basket', {sku: sku, quantity: qty});
     };
 
     this.deleteBasketItem = function (sku) {
@@ -38,3 +40,5 @@ module.exports = function ($http, $q) {
         return $http.post('/api/basket/billing?addressId=' + id);
     };
 };
+
+module.exports = BasketService;

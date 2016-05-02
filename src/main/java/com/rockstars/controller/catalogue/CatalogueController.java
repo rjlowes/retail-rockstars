@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rockstars.model.Category;
 import com.rockstars.model.Product;
 import com.rockstars.model.Variant;
+import com.rockstars.service.CatalogueService;
 import com.rockstars.service.CategoryService;
-import com.rockstars.service.ProductService;
 
 @RestController
 @RequestMapping("/api/catalogue")
@@ -22,7 +22,7 @@ public class CatalogueController {
     private CategoryService categoryService;
     
     @Autowired
-    private ProductService productService;
+    private CatalogueService catalogueService;
     
     @RequestMapping(value="/categories/{categoryId}", method=RequestMethod.GET)
     public Category getCategory(@PathVariable("categoryId") String categoryId) {
@@ -31,17 +31,16 @@ public class CatalogueController {
     
     @RequestMapping(value="/categories/{categoryId}/products", method=RequestMethod.GET)
     public Page<Product> getCategoryProducts(@RequestParam(required=false, defaultValue="1") Integer pageNumber) {
-        Page<Product> pages = productService.findAll(pageNumber);
+        Page<Product> pages = catalogueService.findAll(pageNumber);
         return pages;
     }
 
     @RequestMapping(value="/product/{productId}", method=RequestMethod.GET)
     public Product getProductById(@PathVariable("productId") Long productId) {
-        Product product = productService.findProduct(productId);
-        for(Variant s : product.getVariants()) {
-            System.out.println(s);
-        }
+        Product product = catalogueService.findProduct(productId);
+//        for(Variant s : product.getVariants()) {
+//            System.out.println(s);
+//        }
         return product;
-        //return productService.findProduct(productId);
     }
 }

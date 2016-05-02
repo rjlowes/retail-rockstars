@@ -1,3 +1,21 @@
+const gulp = require('gulp');
+const Server = require('karma').Server;
+
+const testFiles = [
+	''
+];
+
+gulp.task('test:unit', ['scripts'], function (done) {
+	console.log('running test:unit');
+	new Server({
+		// configFile: __dirname + '/karma.conf.js',
+		configFile: require('path').resolve('karma.conf.js'),
+		singleRun: true
+	}, done).start();
+});
+
+
+
 // var gulp = require('gulp'),
 // 	//KarmaServer = require('karma').Server;
 // 	protractor = require("gulp-protractor").protractor,

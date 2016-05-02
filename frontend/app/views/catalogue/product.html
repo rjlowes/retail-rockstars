@@ -1,58 +1,93 @@
-<article itemscope itemtype="http://schema.org/Product" class="row">
+<article itemscope itemtype="http://schema.org/Product" class="container">
 
-    <div class="col-sm-6">
-        <a href="" title="" itemprop="url">
-            <img src="http://www.abercrombieandfitchjakke.com/images/af/Abercrombie-and-Fitch-Feldspar-Brook-T-Shirts-483_LRG.jpg" itemprop="image" class="img-responsive" />
-        </a>
-    </div>
-
-    <div class="col-sm-6">
-        <h1 itemprop="name">{{ product.title }}</h1>
-
-        <p class="offer" itemscope itemtype="http://schema.org/Offer">
-            <span class="price" itemprop="price">&pound;100.00</span>
-            <!--<span class="availability" itemprop="availability">In stock!</span>-->
-        </p>
+    <div class="row">
         
-        <div class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-            <i class="icon-star">&#9733;</i>
-            <i class="icon-star">&#9733;</i>
-            <i class="icon-star">&#9733;</i>
-            <i class="icon-star">&#9733;</i>
-            <i class="icon-star-half">&#9733;</i>
-            <span class="visually-hidden"><span itemprop="ratingValue">4.5</span>/5</span>
-        </div>
+        <div class="col-xs-24 col-md-12 col-lg-7">
+            <h1 class="type-clear-margin" itemprop="name">{{ vm.product.title }}</h1>
 
-        <div itemprop="description">
-            <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
-            <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
+            <p class="type-lead" itemscope itemtype="http://schema.org/Offer">
+                <span class="price" itemprop="price">&pound;100.00</span>
+                <!--<span class="availability" itemprop="availability">In stock!</span>-->
+            </p>
 
-            <p><a role="button">More Information &#9654;</a></p>
+            <!--
+            <ng-include src="'views/product/_star-rating.html'"></ng-include>
+            -->
             
-            <!-- Long Description -->
+            <div class="mobile-gallery">
+                <!--
+                <img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" />
+                -->
+                <div class="Wallop Wallop--slide" id="wallop-mobile" wallop-slider>
+                    <div class="Wallop-list">
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                        <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    </div>
+                    <button class="Wallop-buttonPrevious btn-pager btn-pager--left">
+                        <span>Previous</span>
+                    </button>
+                    <button class="Wallop-buttonNext btn-pager btn-pager--right">
+                        <span>Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div itemprop="description">
+                <p>With a mash-up screenprint that's as original as you are, you'll get noticable style with this Vintage Tee.</p>
+                <!-- Long Description -->
+            </div>
+
+            <ng-include src="'views/catalogue/_basket-form.html'"></ng-include>
+
+            <ul class="list-linear--bullet spacer">
+                <li>Premium collection, our highest quality fabrics. Seasonal collection, limited quantities.</li>
+                <li>100% cotton; cotton is crisp and comfortable, ideal for any situation.</li>
+                <li>108gsm, lightweight fabric made for warmer climates and seasons, great for layering.</li>
+                <li>Plain weave; smooth fabric characterized by its lightweight breathability.</li>
+                <li>Machine wash cold. Hang to dry. Iron on correct settings.</li>
+            </ul>
         </div>
 
-        <ng-include src="'views/product/_basket-form.html'"></ng-include>
+        <div class="desktop-gallery col-xs-24 col-md-12 col-lg-12 col-lg-push-2" ng-init="startDesktopGallery()">
+            <div class="Wallop Wallop--slide" id="wallop-desktop" wallop-slider>
+                <div class="Wallop-list">
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                    <div class="Wallop-item"><img src="images/products/placeholder/mobile-prod/1.jpg" itemprop="image" class="img-responsive" /></div>
+                </div>
+                <button class="Wallop-buttonPrevious btn-pager btn-pager--left">
+                    <span>Previous</span>
+                </button>
+                <button class="Wallop-buttonNext btn-pager btn-pager--right">
+                    <span>Next</span>
+                </button>
+            </div>
+        </div>
     </div>
-
 </article>
 
 
 
 <!-- OLD -->
+<!--
 <article itemscope itemtype="http://schema.org/Product">
     <a href="#" title="#" itemprop="url"><img src="#image" alt="#title" width="#" height="#" itemprop="image" /></a>
     <h1 itemprop="name">Companion Cube</h1>
     <div class="description" itemprop="description">
         <p>The Companion Cube is your best friend and it loves you very much.</p>
-    </div><!--/end .description-->
+    </div>
     <div class="rating" itemscope itemtype="http://schema.org/AggregateRating">
         <p>Rating: <span itemprop="ratingValue">10</span> out of <span itemprop="bestRating">10</span> by <span itemprop="reviewCount">256</span> customers</p>
-    </div><!--/end .rating-->
+    </div>
     <div class="offer" itemscope itemtype="http://schema.org/Offer">
         <span class="price" itemprop="price">$100.00</span>
         <span class="availability" itemprop="availability">In stock!</span>
-    </div><!--/end .offer-->
+    </div>
     <a href="#" title="Add to Cart"><span>Add to Cart</span></a>
     <ol class="review_list">
         <li>
@@ -61,7 +96,7 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
         <li>
@@ -70,7 +105,7 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
         <li>
@@ -79,8 +114,9 @@
                 <p>Posted by: <cite itemprop="author">Gladis</cite> at <time datetime="" pubdate itemprop="datePublished">Sept. 1</time></p>
                 <div class="review_content" itemprop="description">
                     <p>Loved it!</p>
-                </div><!--/end .review_content-->
+                </div>
             </article>
         </li>
     </ol>
 </article>
+-->
