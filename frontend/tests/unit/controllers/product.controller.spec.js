@@ -18,7 +18,7 @@ describe('Product Controller Test', function () {
 			findProduct: function (productId) {}
 		};
 		basketServiceMock = {
-			addBasketItem: function (sku, qty) {console.log('############# was called');}
+			addBasketItem: function (sku, qty) {}
 		}
 	});
 

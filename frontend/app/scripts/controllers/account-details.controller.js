@@ -2,25 +2,25 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:AccountDetailsCtrl
+ * @name rockstars.controller:AccountDetailsCtrl
  * @description
  * # AccountDetailsCtrl
- * Controller of the yoApp
+ * Controller of the rockstars
  */
-module.exports = function ($scope, $http, SALUTATIONS) {
+var AccountDetailsCtrl = function ($scope, $http, accountService, SALUTATIONS) {
 
     $scope.salutations = SALUTATIONS;
 
     $scope.findCustomer = function () {
-        $http.get('/api/customer/details').success(function (data) {
+        accountService.findCustomer().then(function (data) {
             $scope.customerFormData = data;
         });
     };
 
     $scope.updateCustomer = function () {
         var customer = angular.copy($scope.customerFormData);
-        
-        $http.put('/api/customer/details', customer).success(function (data) {
+
+        accountService.updateCustomer(customer).then(function (data) {
             console.log('success, send message to notifier');
         });
     };
@@ -56,37 +56,4 @@ module.exports = function ($scope, $http, SALUTATIONS) {
     // };
 };
 
-/*
-angular.module('yoApp')
-    .controller('AccountDetailsCtrl', function ($scope, $http, SALUTATIONS) {
-
-        $scope.salutations = SALUTATIONS;
-
-        $http.get('/api/customer/details').success(function (data) {
-            console.log(data);
-            $scope.customer = data;
-        });
-
-
-        // $scope.updateCustomer = function () {
-
-        // };
-
-        // $scope.updateEmail = function () {
-
-        // };
-
-        // $scope.updatePassword = function () {
-
-        // };
-
-        // $scope.createAddress = function () {
-
-        // };
-
-        // $scope.updateAddress = function () {
-
-        // };
-
-    });
-*/
+module.exports = AccountDetailsCtrl;

@@ -29,7 +29,7 @@ var angular = require('angular'),
     scrollFactory = require('./services/scroll.factory'),
     addressService = require('./services/address.service'),
     basketService = require('./services/basket.service'),
-    // urlService = require('./services/url.service'),
+    accountService = require('./services/account.service'),
     paymentService = require('./services/payment.service'),
     AccountDetailsController = require('./controllers/account-details.controller'),
     AddressBookController = require('./controllers/addressbook.controller'),
@@ -44,7 +44,8 @@ var angular = require('angular'),
     MainController = require('./controllers/main.controller'),
     ProductController = require('./controllers/product.controller'),
     SessionStatusController = require('./controllers/session-status.controller'),
-    StyleguideController = require('./controllers/styleguide.controller');
+    StyleguideController = require('./controllers/styleguide.controller'),
+    NotifierController = require('./controllers/notifier.controller');
 
 
 angular
@@ -64,7 +65,7 @@ angular
         .service('catalogueService', catalogueService)
         .service('addressService', addressService)
         .service('basketService', basketService)
-        //.service('urlService', urlService)
+        .service('accountService', accountService)
         .service('paymentService', paymentService)
         .controller('AccountDetailsCtrl', AccountDetailsController)
         .controller('AddressBookCtrl', AddressBookController)
@@ -79,5 +80,6 @@ angular
         .controller('MainCtrl', MainController)
         .controller('ProductCtrl', ProductController)
         .controller('SessionStatusCtrl', SessionStatusController)
-        .controller('StyleguideCtrl', StyleguideController);
+        .controller('StyleguideCtrl', StyleguideController)
+        .controller('NotifierCtrl', NotifierController);
 
