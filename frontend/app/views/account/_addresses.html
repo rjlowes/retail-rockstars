@@ -1,15 +1,16 @@
 
-<div ng-repeat="address in addresses" class="col-md-6hhkjh">
-    <div class="card-info type-sml">
-    	<div class="card-info__text">
-        	<ng-include src="'views/partials/modules/_addressDisplay.html'"></ng-include>
-        </div>
-        <div class="card-info__actions">
-	        <ul class="list-linear list-linear--bullet">
-	            <li><a ui-sref="account.addressbookedit({'addressId': address.id})">edit</a></li>
-	            <li><a href="">delete</a></li>
-	        </ul>
+<div class="row spacer--huge">
+    <div ng-repeat="address in addresses" class="col-md-8">
+        <div class="card-info type-sml">
+        	<div class="card-info__text">
+            	<ng-include src="'views/partials/modules/_addressDisplay.html'"></ng-include>
+            </div>
+            <div class="card-info__actions">
+    	        <ul class="list-linear">
+    	            <li><a ui-sref="account.addressbookedit({'addressId': address.id})">edit</a></li>
+    	            <li><a href="">delete</a></li>
+    	        </ul>
+            </div>
         </div>
     </div>
 </div>
-

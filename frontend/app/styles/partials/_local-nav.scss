@@ -13,7 +13,7 @@
 .nav-local__item {
     border-bottom: 1px solid #e0e0e0;
     line-height: 4.5;
-    @include breakpoint('tablet-lg') {
+    @include media-breakpoint-up(lg) {
         border: none;
         display: inline-block;
         line-height: 1.5;
@@ -26,7 +26,7 @@
     padding: 12px 15px 11px;
     line-height: 24px;
     font-size: 15px;
-    @include breakpoint('tablet-lg') {
+    @include media-breakpoint-up(lg) {
         padding: 14px 24px 15px 0;
     }
 }

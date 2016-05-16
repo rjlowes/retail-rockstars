@@ -52,8 +52,8 @@
 	}
 
     @include media-breakpoint-up(md) {
-    	@extend .p;
-		@extend .type-lead;
+    	//@extend .p;
+		//@extend .type-lead;
 		margin-bottom: 10px;
     }
 }

@@ -1,12 +1,6 @@
 
 // dashboard
 .card {
-	
-	&--border {
-		
-	}
-
-	//border-bottom: 30px solid #edeef3;
 }
 
 .card__footer {
@@ -49,10 +43,10 @@
 }
 
 .card-info__text {
-	text-align: center;
+	border-left: 1px solid #ebebeb;
+	padding-left: 20px;
 }
 
 .card-info__actions {
-	border-top: 1px dotted #edeef3;
-	text-align: center;
+	padding-left: 21px;
 }

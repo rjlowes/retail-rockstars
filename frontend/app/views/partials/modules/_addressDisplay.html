@@ -2,7 +2,7 @@
 <!-- Update to use a directive that looks at the properties and only prints the existing ones -->
 
 <div itemscope itemtype="http://schema.org/Person" class="type-sml">
-    <span itemprop="name">{{ address.title }} {{ address.firstname }} {{ address.lastname }}</span>
+    <span class="strong" itemprop="name">{{ address.title }} {{ address.firstname }} {{ address.lastname }}</span>
     
     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="streetAddress">
